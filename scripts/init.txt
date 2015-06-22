@@ -1,0 +1,13 @@
+use spanishproDB
+db.config.insert(
+                {
+                    tokensPrice:10, cancelTime:20, reserveTime:20, limitClassToReserveToDay: 3, teacherCancelTime:20,
+                    email:{service: 'Gmail',auth: {user: 'freddy0309@gmail.com',pass: 'leones2010'}}}
+                );
+                
+db.pages.insert({page: "Terminos y Condiciones", content: "Terminos y Condiciones"});
+db.pages.insert({page: "Politicas y privacidad", content: "Politicas y privacidad"});
+db.pages.insert({page: "FAQ", content: "FAQ"});
+
+
+

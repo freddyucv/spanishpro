@@ -1,0 +1,131 @@
+[main_container]{
+    width: 100%;
+}
+
+[menu] a{
+    font-size: 8px;
+    margin-right: 2px;
+    right: 2px;
+    
+}
+
+
+[home_head] [text]{
+    display: none;
+}
+
+
+
+[home_head] [text_hide], [home_head] [text_hide2]{
+    display: none;
+}
+
+
+
+[title] span{
+    font-size: 12px;
+    
+}
+
+[about_us]{
+    height: 300px;
+}
+[about_us] p{
+    font-size: 8px;
+}
+
+
+[time] [clock_cointainer] [title]{
+    font-size: 10px;   
+}
+
+[footer]{
+    font-size: 10px;
+}
+
+[time]  [clock_cointainer] [clock] span{
+    font-size: 10px;
+}
+
+[time] [clock_cointainer]{
+    margin-left: 6%;
+}
+
+.second_button{
+    font-size: 10px;
+
+    padding: 3px;
+
+}
+
+[button]{
+    font-size: 12px;
+    
+}
+
+[tokens_page] [current_tokens] span{
+    font-size: 25px;
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}
+
+h2{
+    font-size: 14px;
+    text-align: left;
+    color: red;
+}
+
+h3{
+    font-size: 10px;
+    text-align: left;
+    color: red;
+}
+
+table{
+    font-size: 10px;
+}
+
+[teacher_list_page] .dialog{
+    width: 300px;
+}
+
+[teacher_list_page] [teacher_item]{
+
+    width: 250px;
+    height: 120px;
+
+}
+
+[wall_calendar] [am_pm]{
+    font-size: 12px;
+}
+
+[hour] label{
+
+    font-size: 12px;
+   
+}
+
+[days] div{
+
+    font-size: 10px;
+
+}
+[user_message]{
+
+    display:none;
+
+}
+.combo_container span{
+    
+     height: 200px;
+}
+
+.techer_dialog{
+    min-width: 400px;
+    
+}

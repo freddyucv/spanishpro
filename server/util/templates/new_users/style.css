@@ -1,0 +1,11 @@
+h1{
+    color: red;
+}
+
+img{
+    width: 20%;
+}
+
+td,th{
+    border:1px solid black;
+}

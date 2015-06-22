@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<div static_page ng-app ng-init="language='esp'" ng-init="to_show=''">
+    <input type="radio" ng-model="language" name="language"  value="esp"/> Español
+    <input type="radio" ng-model="language"  name="language" value="en"/> Ingles
+    
+    <div ng-show="language=='esp'">
+        <h1 ng-click="to_show='how_work'">&iquest;Como funciona?</h1>
+        
+        <div ng-show="to_show=='how_work'">
+            <img src="images/how_work_image.png"/>
+            
+            <div content>
+                <p>
+                    Inscr&iacute;bete y tendr&aacute;s acceso a una clase gratuita de 30 minutos para que conozcas el m&eacute;todo.
+                    Tendr&aacute;s un token autom&aacute;tico en la cuenta tan pronto te inscribas.
+                </p>
+                
+                <p>
+                    Posteriormente podr&aacute;s comprar tokens para acceder a clases. Todas las clases con todos los 
+                    profesores cuestan 1 token y &eacute;stos nunca se vencen. 
+                </p>
+                
+                <p>        
+                Para comprar cr&eacute;ditos puedes ir al men&uacute; de &quot;Tokens&quot; y escoger uno de los paquetes. Puedes 
+                comprar tambi&eacute;n tan s&oacute;lo 1 token si lo deseas.
+                </p>
+                <p>        
+                Cuando ya tienes tokens en la cuenta puedes reservar de dos maneras:
+                </p>
+                
+                <ul>
+                    <li>    
+                        <p><b>1) Wall/Calendario profesores</b></p>
+                        
+                        <p>Puedes ver el Wall/Calendario de profesores y seleccionar la hora que haya ofrecido alg&uacute;n 
+                        
+                        profesor para reservarla. Bajo este m&eacute;todo t&uacute; puedes escoger al profesor que m&aacute;s te 
+                        
+                        guste. Las horas se vencen cuando falten 30 minutos para su inicio y desaparecen si ning&uacute;n 
+                        
+                        alumno las tom&oacute;.</p>
+                        
+                        <p>
+                        Cuando selecciones una hora ofrecida por alg&uacute;n profesor, se confirmar&aacute; la reserva y por 
+                        
+                        ende se te deducir&uacute; un token.</p>                
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>    
+                        <p><b>2) Wall/Calendario alumnos</b></p>
+                        
+                        <p>
+                            Puedes publicar una hora en el Wall/Calendario de alumnos y cualquier profesor la podr&aacute; 
+        
+                            tomar y dictarte esa clase. Bajo este m&eacute;todo cualquier profesor puede tomar la clase 
+                            
+                            solicitada por el alumno. Esta modalidad es &uacute;til cuando quieras tener una clase a una hora 
+                            
+                            a la cual no hay oferta de ning&uacute;n profesor o cuando quieras una clase con poco tiempo de 
+                            
+                            anticipaci&oacute;n. Puedes publicar tu solicitud de clase hasta con 8 d&iacute;as de antelaci&oacute;n. Cuando 
+                            
+                            faltan 30 minutos para la clase, la hora publicada desaparece si ning&uacute;n profesor la tom&oacute;.</p>
+                        
+                        <p>
+                            Cuando publiques no se te deducir&aacute; el token, &uacute;nicamente se har&aacute; esto cuando alg&uacute;n
+                            profesor tome la hora y te reserve la solicitud.
+                        </p>                
+                    </li>
+                </ul>
+        
+                <p>        
+                En el momento en que se genera la reserva bajo cualquiera de los dos m&eacutetodos, se env&iacutea un correo         
+                de confirmaci&oacuten a ambas partes con el usuario de Skype de ambos, para que se agreguen lo m&aacutes         
+                pronto posible para evitar inconvenientes a la hora de la clase.
+                </p>
+                <p>
+                El token solo se deduce de tu cuenta cuando se confirma la reserva.
+                </p>
+                
+                <p>
+                    <b>Cancelaci&oacuten:</b>
+                </p>
+                
+                <p>
+                    Si se presenta cancelación por cualquier motivo, el token siempre será devuelto, siempre y cuando         
+                    la cancelación haya sido hecha con más de 30 minutos de anticipación. En caso contrario el token         
+                    no será devuelto.
+                </p>
+                
+                <p>
+                    <b>Evaluación gratuita periódica</b>        
+                </p>
+                <p>
+                    Al final de cada clase, el profesor te entregará un formato con las observaciones positivas y 
+                    negativas de la clase. Spanishpro.net guardará estos formatos, creando un expediente para cada 
+                    estudiante. Cada 10 clases puedes solicitar, escribiendo al correo de contacto, una evaluación de 
+                    20 minutos por Skype, en la que el administrador te evaluará con base en tu expediente. De esta 
+                    forma, obtendrás una calificación y podrás monitorear tu avance.        
+                </p>
+                
+                <p>
+                    <b>Proceso de rotación</b>
+                </p>
+        
+                <p>        
+                    Promovemos que todos los estudiantes tengan la posibilidad de tener clase con profesores de 
+                    distintas disciplinas. Por esto, ofrecemos un sorteo de 3 tokens entre los estudiantes que hayan 
+                    tomado clase en el mes previo con al menos 4 profesores diferentes.
+                </p>
+            </div>
+        </div>
+        
+        <h1 ng-click="to_show='meto'">La metodología</h1>
+        
+        <div ng-show="to_show=='meto'">
+            <div content>
+                    
+                <p>
+                    <b>Metodología:</b>
+                </p>    
+                
+                <ul>
+                    <li>
+                        Las clases son dirigidas principalmente para alumnos que tengan como mínimo un nivel A2             
+                        según el Marco Común Europeo de Referencia.
+                    </li>
+                    
+                    <li>
+                        Las clases son totalmente personalizadas enfocándose hacia los intereses del alumno,             
+                        hacia su nivel de idioma y hacia las razones que tiene para mejorar su español. Por esta             
+                        razón es importante que al registrarse los describa.
+                    </li>
+                    
+                    <li>
+                        Se conversa de forma estructurada e intentando comunicarse, ya que esta es la única             
+                        forma de experimentar con los límites en el aprendizaje de idiomas y salir de la zona de             
+                        confort.
+                    </li>
+                    
+                    <li>
+                        Lograr una conversación fluida es el centro de la metodología. Llevar la conversación hacia             
+                        niveles más complejos obliga a que el estudiante use todo su conocimiento en español y             
+                        siga expandiendo sus límites y por ende mejorando.
+                    </li>
+                    
+                    <li>
+                        Se quiere fomentar el intercambio comunicativo y cultural al compartir ideas y opiniones,             
+                        enmarcados en la práctica del español.
+                    </li>
+                </ul>    
+                
+                <p>        
+                    <b>Método y reglas:</b>
+                </p>
+                
+                <ul>
+                    <li>El profesor evitará al máximo que el estudiante utilice otro idioma para expresarse.</li>
+                
+                    <li>
+                    No es una clase convencional en la que el profesor interrumpe para corregir, se da             
+                    prioridad al flujo conversacional. Sin embargo si se tienen en cuenta todos los errores para             
+                    que el alumno se autocorrija en el momento adecuado.
+                    </li>
+                    <li>
+                    El alumno puede dirigir la clase hacia el tema que desee. Hay total flexibilidad temática.
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>    
+        
+        
+    <div ng-show="language=='en'">
+
+        <h1 ng-click="to_show='how_work'">How does it work?</h1>
+        
+        <div ng-show="to_show=='how_work'">
+            <img src="images/how_work_image_en.png"/>
+            
+            <p>            
+                Suscribe yourself and you will have a free class of 30 minutes so that you will be able to know the 
+                method. As soon as you register you will have a free token on your account.
+            </p>
+    
+            <p>        
+            Afterwards, you will be able to buy tokens for classes. Every class with every teacher cost one 
+            token and these tokens never expire.
+            </p>
+    
+            <p>        
+            To buy tokens you can go to the menu “Tokens” and choose one of the three packages. You can 
+            buy as few as one token if you decide it.
+            When you already have tokens in your account, you can reserve through 2 mechanisms:
+            </p>
+            
+            <ul>
+                <li>
+                    <p><b>1) Wall/Calendar of teachers</b></p>
+                    <p>
+                    You can take a look at the Wall/Calendar of teachers and take an hour that was offered by                 
+                    a teacher. Under this method you can choose the teacher that you like the most and the                 
+                    hour you want. The hours published by the teachers expire 30 minutes before the time of                 
+                    start of the class.
+                    </p>
+                    <p>
+                    In the moment in which the reservation is made by both means, an email is sent to both 
+                    the student and the teacher with the Skype username of both so that you will add each 
+                    other as soon as possible in order to avoid any inconvenience at the time of the class.
+                    </p>
+                </li>
+                
+                <li>
+                    <p><b>2) Wall/Calendar of students</b></p>
+                    
+                    <p>
+                        You can post an hour in the Wall/Calendar of students in which you would like to have                 
+                    class.  The student must know that by using this way of making a reservation his hour can                 
+                    be taken by any teacher. This way of reservation is the best when you want to take a class                 
+                    at a time when no teacher said he was available or when you want a class with not many                 
+                    time in advance. The maximum time to publish an hour through this method is 8 days.                
+                    When you publish you hour, your token will not be deducted from your account. Only                 
+                    when a teacher picks your hour and the reservation is made.
+                    </p>
+                    <p>
+                    30 minutes before the time of start of the class the publication will disappear if no teacher                 
+                    picked it up.
+                    </p>
+                 </li>
+            </ul>
+            
+            <p>
+                <b>Cancelation:</b>
+            </p>    
+    
+            <p>
+                In the event of cancellation, the token will be returned, unless the cancelation is made with less 
+                
+                that 30 minutes in advance of the time of start of the class. In that case, the token will not be 
+                
+                returned.
+            </p>
+    
+            <p>        
+            <b>Free periodic evaluation:</b>
+            </p>
+    
+            <p>
+            At the end of each class, the teacher will give the student a form which points out the positive and     
+            negative aspects of the student´s performance. This forms will be saved by Spanishpro.net and will     
+            be kept to create a file of the student. Every 10 classes, the student can ask for the evaluation. This     
+            evaluation will consist of 20 minutes in Skype with the manager of the site. In this time, the     
+            manager will evaluate the student performance on the previous points in which the student made     
+            mistakes. Afterwards, the student will receive a score which he can use to keep track of his     
+            progress.
+            </p>
+    
+            <p>
+            <b>Rotation process:</b>
+            </p>
+            
+            <P>
+            We promote our students to improve by speaking with all kinds of teachers from all kinds of         
+            disciplines. That is why we offer at the end of each month a raffle of 3 tokens between all the         
+            students that had class during the previous month with at least 4 different teachers.
+            </p>
+        </div>
+                    
+        <div content>
+
+            <h1  ng-click="to_show='meto'">Methodology</h1>
+
+            
+            <div ng-show="to_show=='meto'">
+                <p>
+                    <b>Methodology:</b>
+                </p>
+                
+                <ul>
+                    <li>
+                        The classes will mainly address all the Spanish learners with already a basic level 
+                        minimum. The ideal will be superior to A2.
+                    </li>    
+    
+                    <li>    
+                        The classes will be completely personalized to the each students according the specific 
+                        interests of the student (that’s why we require each student to fill the data regarding this 
+                        point when registering), the level of the student and his objectives regarding the study of 
+                        Spanish.
+                    </li>
+                    
+                    <li>
+                        Having a structured conversation and trying to communicate is the only way to test the                     
+                        limits of your language capability, leave your comfort zone and improve
+                    </li>
+                                        
+                    <li>
+                        To create a fluent conversation is the heart of the methodology. Taking the conversation 
+                        to higher levels pushes the student to use all of his vocabulary and expand his limits in 
+                        Spanish therefore improving.
+                    </li>
+    
+                    <li>                    
+                        We wish to promote communicative and cultural exchange, by the exchange of ideas and
+                        opinions between students and teachers all along the practice of oral Spanish.
+                    </li>
+                </ul>
+                
+                <p>
+                    <b>Method and rules:</b>
+                </p>
+                
+                <ul>
+                    <li>
+                        The teacher will try to avoid the use of other languages by the student. Speaking in 
+                        Spanish all the time of the class promotes the improvement of the student.
+                    </li>
+                    
+                    <li>
+                        This will not be a conventional class in which the teacher keeps on stopping the student to 
+                        correct his mistakes. In this type of classes, priority will be given to the fluency of the 
+                        conversation. Nevertheless, the teacher will pay attention to each mistake and will give a             
+                        time for the auto correction of the student himself.
+                    </li>
+                    
+                    <li>
+                        The student is free to set the subject of the class. There is full flexibility for this.
+                    </li>
+                </ul>
+            </div>
+        </div>   
+    </div>    
+</div>    

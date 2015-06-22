@@ -1,0 +1,1327 @@
+
+[main_container]{
+    width: 80%;
+    display: inline-block;
+    left:50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    
+    
+}
+
+body{
+    background-color: #e6e7e9;
+}
+
+.dialog{
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    
+    background-color: #ccc;
+    
+    padding: 2%;
+    display: inline-block;
+    
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid black;
+    position: absolute;
+    
+    box-shadow: 10px 10px 5px #888888;
+    z-index: 1;
+    
+    color: black;
+    
+   
+}
+
+.techer_dialog{
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -70%);
+    min-width: 600px;
+    
+}
+
+input,select,textarea{
+    -webkit-transition:color 0.5s,background 0.5s;;
+    transition:color 1s,background-color 1s;  
+  
+    color:black;
+    background-color: white;
+    outline: none;
+    border: 1px solid gray;
+}
+
+input.ng-valid {
+  
+    -webkit-transition:color 0.5s,background 0.5s;;
+    transition:color 1s,background-color 1s;  
+  
+    color:black;
+    background-color: white;
+    outline: none;
+    border: 1px solid gray;
+}
+
+[another_head]{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    background-color: #e6e7e9;
+}
+
+[home_head], [another_head]{
+    
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    
+}
+
+[logo]{
+    position: absolute;
+    left: 0px;
+    top: 2%;
+    opacity: 0.3;
+
+    /*background-color: white;*/
+    
+    border-radius: 0 10px 10px 0 ;
+}
+
+
+[img_logo]{
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+
+    top: 4%;
+    left: 3%;
+}
+
+[another_head] [logo]{
+    width: 20%;
+    height: 48%;
+
+}
+
+
+[another_head] [img_logo]{
+    width: 20%;
+    height: 50%;
+}
+
+
+[home_head] [logo]{
+
+    width: 20%;
+    height: 28%;
+
+}
+
+
+[home_head] [img_logo]{
+
+    width: 25%;
+    height: 35%;
+
+}
+
+[home_head] [text_hide]{
+    position: absolute;
+    left:  66%;
+    top:26%;
+    width: 33%;
+    padding-left: 5px;
+    word-wrap: break-word;
+    overflow :hidden;
+
+    display: inline-block;
+    background-color: #312d29;
+    
+    border-radius: 10px 0 0 10px;
+    color: white;
+    
+}
+
+[home_head] [text_hide2]{
+    position: absolute;
+    left:  5%;
+    top:46%;
+    width: 33%;
+    height: 32%;
+    padding-left: 5px;
+    color: white;
+    z-index:1px;
+    word-wrap: break-word;
+    overflow :hidden;
+}
+
+[register_button]{
+    top: 60%;
+    left: 65%;
+    position: absolute;
+    height: 8%;
+    width: 15%;
+    
+}
+
+[re_button]{
+    top: 60%;
+    right:  4%;
+    position: absolute;
+    height: 8%;
+    width: 15%;
+     
+    
+}
+
+[cancel_button]{
+    height: 5%;
+    width: 5%;
+    position: relative;
+}
+
+[error_text]{
+    color: red;
+    font-size: 10px;
+}
+
+.error_field{
+    border: 2px solid red;    
+}
+
+[button]{
+    color: white;
+    background:linear-gradient(#ff3b3c, #7d0506);
+    min-width: 70px;
+    min-height: 25px;
+    box-sizing: border-box;
+    
+    border-radius: 5px;
+    font-size: 16px;
+
+    display: inline-block;
+}
+
+[button] span, [button] a{
+    top:50%;
+    left: 0%;
+    transform: translate(0, -50%);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color:white;
+    text-decoration: none;
+    
+}
+
+.second_button{
+    display: inline-block;
+    
+    min-width: 30px;
+    min-height: 10px;
+    
+    text-align: center;
+    
+    padding: 7px;
+    
+    color: white;
+    font-size: 12px;
+    background: linear-gradient(#5f5f5f, black);
+    
+    font-weight: bold;
+}
+
+.second_button a{
+    top: 50%;
+    transform: translate(0, -50%);
+    text-decoration: none;
+    color: white;
+}
+
+[login_button]{
+    right:  5%;
+    position: absolute;
+}
+
+
+
+[home_head] [forget_password_button]{
+    right:  5%;
+    position: absolute;
+    top: 80%;
+}
+
+[login_button_home]{
+    top: 70%;
+}
+
+
+
+[logout_button_home]{
+    top: 80%;
+}
+
+[login_button_not_home]{
+    top:50%;
+}
+
+
+
+[logout_button_not_home]{
+    top: 70%;
+}
+
+[logout_button]{
+    right:  5%;
+    position: absolute;
+    cursor:pointer;
+}
+
+
+[home_head] [text_hide] [content]{
+    font-size: 20px;
+    
+}
+
+[home_head] [text_hide2] [content]{
+    font-size: 20px;
+    
+}
+[menu]{
+    position: absolute;
+    right: 5px;
+    display: inline-block;
+    height: 30px;
+    top: 6%;
+    width: 75%;
+    text-align: right;
+}
+
+.selected{
+    background-color: black;
+     padding: 2px;
+     border-bottom: 2px solid red;
+}
+
+[menu] a{
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+[home_head] img{
+    width: 100%;
+}
+
+[another_head] img{
+    width: 100%;
+}
+
+
+[about_us]{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 360px;
+}
+[about_us] [container]{
+    display: inline-block;
+    
+    height: 300px;
+    width: 100%;
+}
+[about_us] [container] h1{
+    margin-bottom: 5%;
+}
+
+[about_us] [container] .combo_container{    
+    width: 100%;
+    position: relative;
+}
+.combo_container span{
+    width: 30%;
+    height: 250px;
+    box-sizing: border-box;
+    position:relative;
+    display: inline-block;    
+    margin-left: 2%;
+
+}
+.combo_container span img{
+    width: 100%;
+    height: 100%;
+}
+
+[about_us] [container] div{
+    display: inline-block;
+    
+    position: relative;
+    width: 60%;
+    left:50%;
+    transform: translate(-50%, 0);
+}
+
+[about_us] .about_us_image{
+    border: solid 2px  #585858;
+    right: 2px;
+    top: 50%;
+    
+    position: absolute;
+    transform: translate(   0%, -50%   );    
+    width: 30%;
+}
+
+[title]{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5%;
+}
+
+[title] span{
+    left: 7px;
+    position: absolute;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+[about_us] p{
+    color: #585858;
+    text-align: justify;
+    font-size: 12px;
+}
+
+[title] .head_image{
+    position: absolute;
+    height: 20px;
+ 
+}
+
+
+
+[time]{
+    width: 100%; 
+    position: relative;
+    display: inline-block;
+    font: 'Bell MT';
+    font-weight: bold;
+    font-size:17px;
+}
+
+
+
+
+[time] [clock_cointainer]{
+    width: 22%;
+    max-width: 120px;
+    height: 80%;
+    position: relative;
+    display: inline-block;
+    margin-left: 8%;
+}
+
+[time] [clock_cointainer] [title]{
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    
+    width: 100%;
+    text-align: center;
+    
+}
+
+[time]  [clock_cointainer] [clock]{
+    width: 100%;
+    height: 80%;
+
+    position: relative;
+    box-sizing: border-box;
+    top: 20%;
+    
+    background-color: black;
+    
+    border:5px outset #121212;
+    border-radius: 12px;
+    box-shadow: 10px 10px 5px #888888;
+    
+    
+}
+
+[time]  [clock_cointainer] [clock] span{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+[time]  [clock_cointainer] [clock] [t12]{
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+[time]  [clock_cointainer] [clock] [t9]{
+    left: 0px;
+    top: 50%;
+    transform: translate(0, -50%)  
+}
+
+[time]  [clock_cointainer] [clock] [t6]{
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%)   
+}
+
+[time]  [clock_cointainer] [clock] [t3]{
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%) 
+    
+}
+
+[footer]{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(#5f5f5f, black);
+    color: white;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+}
+
+
+[footer] [footer_menu_container]{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    white-space: nowrap;
+}
+
+[footer] [footer_menu]{
+    margin-right: 5%;
+    cursor: pointer;
+    
+    display: inline-block;
+    vertical-align: middle;
+    
+    text-decoration: none;
+    color: white;
+}
+
+[ui-view]{
+    width: 100%;
+    position: relative;
+    background-color: #e6e7e9;    
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-top: 0px solid black;
+}
+
+[admin_page]{
+    margin-top: 5%;    
+}
+
+[admin_page] section{
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+    width: 80%;
+
+    position: relative;
+    left:50%;
+    transform: translate(-50%, 0); 
+    
+}
+
+ label{
+    font-size: 12px;
+    margin-right: 4px;
+    
+}
+
+[register_teacher_button]{
+    height: 12%;
+    width: 40%;
+    position: relative;
+    left:50%;
+    transform: translate(-50%, 0);
+    
+}
+
+[admin_page] article{
+    margin-top: 2%;
+    
+}
+
+[admin_page] [label_big]{
+    width: 220px;
+    display: inline-block;
+}   
+
+ [label_little]{
+    width: 30px;
+    display: inline-block;
+    margin-left: 1%;
+}
+
+[admin_page] input{
+    width: 150px;    
+}
+
+[admin_page] [add]{
+    width: 10%;
+    height: 10%;
+    position: relative;
+}
+
+[admin_page] [add] span{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    
+   
+}
+
+[config_save_button]{
+    width: 10%;
+    position: relative;
+}
+
+[validate_token_button]{
+    width: 30%;
+    position: relative;
+}
+
+h1{
+    font-size: 22px;
+    text-align: center;
+    color: red;
+    font-family: "AR CENA"
+}
+
+[static_page] h1{
+    cursor: pointer;    
+}
+
+[static_page] h2{
+    cursor: pointer;    
+}
+
+h2{
+    font-size: 16px;
+    text-align: left;
+    color: red;
+}
+
+h3{
+    font-size: 12px;
+    text-align: left;
+    color: red;
+}
+
+[tokens_page]{
+    width: 80%;
+    position: relative;
+    left:50%;
+    transform: translate(-50%, 0);
+    
+}
+
+[tokens_page] [container]{
+    min-height: 350px;   
+}
+
+[container]{
+    display: inline-block;
+    width: 100%;
+    
+
+}
+
+[tokens_page] [buy_tokens_button]{
+    height: 50px;
+    width: 40%;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    
+}
+
+[tokens_page] [current_tokens]{
+    display: inline-block;
+    float:right;
+    border: 2px solid red;
+    position: relative;
+    background-color: black;
+    padding: 2%;
+    border-radius: 10px;
+    
+}
+
+[tokens_page] [current_tokens] span{
+    font-size: 30px;
+    width: 100%;
+    color: white;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  
+}
+
+[purchase_tokens_button]{
+    width: 30%;
+    position: relative;
+}
+
+[buy_tokens_dialog]{
+    width: 500px;
+    top:140px;
+}
+
+
+[buy_tokens_dialog] div{
+    margin-bottom: 4%;
+}
+
+.little_text{
+    width: 30px;  
+}
+
+[combos_config] table{
+    width: 40%;    
+}
+
+table{
+    border: 1px solid red;
+    font-size: 12px;
+    border-collapse: collapse;
+    
+}
+
+td,th{
+    border: 1px solid red;
+    padding: 2%;
+    text-align: center;
+}
+
+th, tr[special]{
+    background: linear-gradient(#ff3b3c, #7d0506);
+    font-weight: bold;
+    color: white;
+}
+
+[combos_to_buy]{
+    display: inline-block;
+    width: 100%;
+    margin-top: 2%;
+    
+}
+
+[combos_to_buy] span{
+    padding: 3%;    
+}
+
+[combos_to_buy] h2{
+    text-align: center;
+}
+
+[combos_to_buy] table{
+    width: 100%;    
+}
+
+[combos_to_buy] td{
+    padding: 1%;    
+}
+
+[price]{
+    font-size: 18px;
+}
+
+[combos_container] input[type="text"]{
+    width: 20px;
+}
+
+[tokens_page] table{
+    width: 70%;
+}
+
+[classs_page] [cork]{
+    width: 100%;
+    display: inline-block;
+    background-image: url("../images/corcho.JPG");
+    border: 1px solid black;
+    position: relative;
+}
+
+
+[cork] [hours]{
+
+}
+
+[cork] [date]{
+    height: 20px;
+    position: relative;
+    width: 70px;
+}
+
+[cork] [date_container]{
+    height:  160px;
+    position: absolute;
+    top: 15%;
+    left: 7%;
+    width: 70px;
+    
+    
+}
+
+[cork] [day]{
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+
+}
+
+[cork] [month]{
+    color: red;
+    font-size: 12px;
+    margin-left: 10%;
+    z-index: 1;
+
+}
+
+[collapse]{
+    cursor: pointer;
+    position: absolute;
+    left: 5px;
+
+}
+
+[search]{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5px;
+}
+
+[search] div{
+    padding: 5px;
+}
+
+.search_selected{
+    background: linear-gradient(#ff3b3c, #7d0506);
+    color: white;
+}
+
+.search_selected_calendar{
+    background: linear-gradient(#ff3b3c, #7d0506);
+}
+
+[history_tokens] .panel{
+    display: inline-block;
+    width: 45%;
+    margin-right: 2%;
+}
+
+
+[history_tokens] div{
+    margin-bottom: 5px;
+}
+
+[history_tokens] input{
+    width:  20px;
+}
+
+[save_managment_tokens]{
+    width: 30%;
+    position: relative;
+}
+
+[picture_button]{
+    position: relative;
+    width: 100%;
+    
+    left:50%;
+    transform: translate(-50%, 0);
+    
+    margin-top: 2%;
+}
+
+[perfil_page]{
+    width: 100%;
+
+}
+
+[perfil_page] [picture]{
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+    top:30px;
+    width: 20%;
+    
+}
+
+[perfil_page] label{
+    word-break: break-all;    
+}
+
+[perfil_page] [picture] img{
+    width: 100%;
+    display: block;
+}
+
+[perfil_page] [panel]{
+    display: inline-block;
+    margin-left: 5%;
+    
+    position: relative;
+    width: 68%;
+    
+    float: right;
+}
+
+[perfil_page] [panel] [edit]{
+    position: absolute;
+    top:0px;
+    
+    right: 0px;
+    
+}
+
+[perfil_page] [panel] div{
+    margin-bottom: 2%;
+}
+
+
+.key{
+    font-weight: bold;
+    
+}
+
+[log]{
+    font-size: 10px;
+}
+
+[list_container]{
+    width: 100%;
+    display: inline-block;
+    
+}
+
+[teacher_list_page] [teacher_item]{
+    border: 2px solid black;
+    border-radius:  10px;
+    background-color: #cccccc;
+    padding: 5px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    width: 300px;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 150px;
+    display: inline-block;
+   
+    position: relative;
+}
+
+[teacher_item] img{
+    width: 20%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+[teacher_item] [data]{
+    margin-left: 10px;
+    position: absolute;
+    right:  5px;
+    top: 5px;
+    width: 70%;
+    max-height: 90%;
+     overflow: hidden;
+}
+
+[teacher_item] div{
+    margin-bottom: 2%;
+    text-align: justify;
+    font-size: 12px;
+    word-wrap: break-word;
+    
+    
+}
+
+[teacher_item] [data] [expertice]{
+    height: 60px;
+    overflow: hidden;
+    
+}
+
+[teacher_list_page] .dialog{
+    width: 400px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+[teacher_item] label{
+    word-wrap: normal;
+    font-size: 14px;
+}
+
+[teacher_list_page] .dialog .key{
+    color: red;
+    
+}
+
+[static_page_config] textarea{
+    width: 100%;
+    margin-top: 3%;
+    height: 400px;
+}
+
+[save_pages_config]{
+    float: right;
+    width: 30%;
+    position: relative;
+}
+
+[static_page] content{
+    word-wrap: break-word;
+    width: 100%;    
+}
+
+[static_page_dialog]{
+    width: 110%;
+    max-width: 8500px;
+    max-height:  600px;
+    word-wrap: break-word;
+}
+
+[static_page_dialog] p{
+    max-width: 650px;
+    max-height:  400px;
+    word-wrap: break-word;
+    overflow: auto;
+    text-align: justify;
+    padding: 2px;
+    font-size: 11px;
+}
+
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+[wall_calendar] .cork{
+    background-image: url("../images/corcho.jpg");
+    width: 125%;
+    position: relative;
+    display: inline-block;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+[wall_calendar] [book]{
+    position: relative;
+
+    width: 120%;
+    display: inline-block;
+    
+    border-bottom: black solid 1px;
+    padding-bottom: 2%;
+}
+
+
+[wall_calendar] .cork [hours]{
+    display: inline-block;
+    position: relative;
+    height: 30px;
+
+    width: 100%;  
+}
+
+[hour] {
+    position: relative;
+    width: 20%;
+    max-width: 140px;
+    display: inline-block;
+}
+
+
+[users] {
+    position: relative;
+    width: 70%;
+    display: inline-block;
+
+}
+
+[user] {
+    width: 22%;
+    max-width: 140px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+
+[user] [picture]{
+    width: 60%;
+    max-width: 120px;
+    max-height: 100px;
+    z-index: 1;
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translate(-50%, 0);
+}
+
+[user] [marco]{
+    width: 100%;    
+}
+
+[user] [name]{
+    position: absolute;
+    bottom:8%;
+
+    z-index: 1;
+    font-weight: bold;
+    font-size: 12px;
+    
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+[user] [first_class]{
+    font-size: 12px;
+    position: absolute;
+    right: -10%;
+    bottom: 8%;
+    color: white;
+    background-color: red;
+    transform: rotate(-20deg);
+    z-index:1;
+}
+
+[hour] img{
+    width: 100%;    
+}
+
+[hour] label{
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+    
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+}
+
+[wall_calendar] .cork .calendar_big{
+    width: 150px;
+    height: 350px;
+}
+
+[wall_calendar] .cork .calendar_little{
+    width: 150px;
+    height: 200px;
+}
+
+
+[wall_calendar]  [book] [input]{
+    width: 20px;
+    height: 20px;
+    background-color: #2c2c20;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+[wall_calendar] [container]{
+    width: 80%;
+    display: inline-block;
+}
+
+[wall_calendar] [am_pm]{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.AMPM_selected{
+    color: white;
+    background-color: #7d0506;
+}
+
+[book_button]{
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+    max-width: 200px;
+    margin-left: 5%;
+    height: 30px;
+}
+
+[days] {
+    width: 120%;
+    display: inline-block;
+    border-bottom: 1px solid black;
+ 
+}
+
+[days] div{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 15%;
+    height: 30px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    font-size: 12px;
+    min-width: 50px;
+}
+
+[days] .unselected{
+    background-color: black;
+    color: white;
+}
+
+[days] div span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[wall_calendar] [filter]{
+    border: 1px solid black;
+    border-radius: 10px;
+    
+   
+    padding: 10px;
+    margin-right: 5px;
+    
+}
+
+[wall_calendar] [filters]{
+    
+    margin-bottom: 2%;
+    margin-top: 2%;
+
+    width: 120%;
+    display: inline-block;
+}
+
+.filter_selected{
+    color: black;
+    background: #cccccc;
+}
+
+.filter_unselected{
+    color: gray;
+    background: #cccccc;
+}
+
+[filters] [note]{
+    float:right;
+}
+
+[down_up]{
+    cursor: pointer;    
+}
+
+[admin_cancel_class] [filter]{
+    margin-bottom: 2%;    
+}
+
+[admin_cancel_class] [filter] input{
+    width: 30px;
+}
+
+[payment_button]{
+    position: relative;
+    float:right;
+    margin-bottom: 3%;
+}
+
+[contact_admin_dialog]{
+    width: 600px;    
+}
+
+[contact_admin_dialog] .row{
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+[contact_admin_dialog] textarea{
+    width: 90%;
+    height: 300px;
+}
+[contact_admin_button]{
+    position: relative;
+    width: 100px;
+    float: right;
+}
+[static_page] img{
+    width:100%;
+}
+[user_message]{
+    position:absolute;
+    bottom:20%;
+    left:5%;
+    font-size: 20px;
+    width:40%;
+    color:white;
+}
+[time] p{
+    width: 100%;
+    
+    word-wrap: break-word;
+    text-align: center;
+}
+
+/*[cork] [classs]{
+   display: inline-block;
+   background-color: red;
+   width: 70%;
+   height: 30px;
+   right: 2%;
+   top: 2%;
+   position: absolute;
+}*/

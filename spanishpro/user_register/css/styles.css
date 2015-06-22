@@ -1,0 +1,131 @@
+[user_register], [login], [reset_password], [forget_password]{
+
+    
+
+}
+
+[user_register] h1, [reset_password] h1, [forget_password] h1{
+    font-size: 16px;
+    text-align: center;
+    color: red;
+}
+
+[user_register] label, [login] label, [reset_password] label, [forget_password] label{
+    font-weight: bold;
+    width: 40%;
+    display: inline-block;
+    font-size: 12px;
+}
+
+[user_register] div, [login] div, [reset_password] div, [forget_password] div{
+    margin-bottom: 2%;
+    width: 100%;  
+}
+
+[user_register] input, [user_register] select, [login] input, [reset_password] input, [forget_password] input{
+    width: 50%;
+    margin-left: 3%;
+    font-size: 12px;
+}
+
+[user_register] select{
+    margin-left: 3%;
+}
+
+[user_register] textarea{
+    width: 100%;
+}
+
+
+[user_register] [datepicker]{
+    width: 20%;
+}
+
+[user_register] [age]{
+    width: 20%;
+    margin-left: 5%;
+}
+
+[user_register] [button], [login] [button], [reset_password] [button], [forget_password] [button]{
+    /*border: 1px solid black;*/
+    /*font-weight: bold;*/
+    width: 20%;
+    min-width: 70px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+
+[close]{    
+    font-weight: bold;
+    position: absolute;
+    top:3%;
+    right: 3%;
+    cursor:pointer;
+    color: red;
+    font-size: 12px;
+    
+    text-shadow: 0 1px 0 #ccc,
+                 0 1px 0 #c9c9c9,
+                 0 1px 0 #bbb,
+                 0 1px 0 #b9b9b9,
+                 0 1px 0 #aaa,
+                 0 1px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);       
+    
+}
+
+.button_disabled{
+    color: gray;
+    cursor: default;
+}
+
+[perfil_page]{
+    width: 100%;
+}
+
+[perfil_page] .data{
+        display: inline-block;
+        margin-left: 3%;
+        width: 60%;
+}	
+
+[perfil_page] {
+        display: inline-block;
+        width: 80%;
+}
+
+[perfil_page] .perfil_picture {
+        vertical-align:middle;
+        float: left;
+        width: 25%;
+}
+
+[perfil_page] label {
+        display: inline-block;
+        width: 200px;
+        font-size: 13px;
+}
+
+.imgPerfil	 {
+        width: 10%;
+        
+        float: right;
+        cursor: pointer;
+}
+
+[perfil_page] .data div {
+        margin-bottom: 3%;
+}
+
+[perfil_page] textarea{
+    width: 100%;
+}

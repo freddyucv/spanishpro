@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+
+<div admin_page>
+    <h1>Administracion de Clases/Tokens</h1>
+    
+    <section ng-controller="TokensManagmentController as tmc">
+        <h2>Modificar tokens</h2>
+        
+        <article>
+            <label>Buscar Estudiante</label>
+            <input type="text" ng-model="tmc.searchCriteria" ng-keyup="tmc.search();tmc.selectedStudent=null"/>            
+        </article>
+        
+        <article>
+            <label></label> 
+            <span search ng-hide="tmc.notFound() || tmc.selectedStudent">
+                <div ng-repeat="student in tmc.found" ng-mouseover="tmc.over = student['_id']"
+                     ng-class="{search_selected: tmc.over == student['_id']}" ng-Mouseleave="tmc.over = -1"
+                     ng-click="tmc.searchCriteria = student.name;tmc.selectedStudent=student">
+                    
+                    {{student.name}}
+                </div>
+            </span>
+        </article>
+        
+        <article ng-show="tmc.selectedStudent" history_tokens>
+            
+                <span  class="panel">                    
+                    <table style="width: 100%">
+                        <tr>
+                            <td>Tokens: {{tmc.selectedStudent.tokens}}</td>
+                        </tr>
+                        
+                        <tr special>
+                            <td>Tokens Especiales</td>
+                        </tr>
+                        
+                        <tr ng-repeat="tokens in tmc.selectedStudent.specialTokens">
+                            <td>{{tokens.teacherName}}: {{tokens.nTokens}} Tokens</td>
+                        </tr>                    
+                    </table>
+                </span>
+                
+                <span class="panel right">
+                    <h3>Modificar cantidad de tokens</h3>
+                    <div>
+                        <label>Profesor</label>
+                        <select ng-model="tmc.selectedTeacher">
+                            <option value="-1">Para todos los profesores</option>
+                            <option ng-repeat="teacher in tmc.teachers" value="{{teacher['_id']}}">{{teacher.name}}</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>Tokens para incrementar</label>
+                        <input type="text" ng-model="tmc.increment" numeric/>
+                        <img src="user_register/images/x_red.png" error/>
+                        <label error_text error></label>                         
+                    </div>
+                    
+                    <div button save_managment_tokens>
+                        <span ng-click="tmc.incrementTokens()">Guardar</span>
+                    </div>                    
+                </span>    
+        </article>        
+    </section>
+    
+    <section ng-controller="ValidateTokensController as vtc" valid_tokens>
+        <h2>Validacion de tokens</h2>
+        
+        <article>
+            <h3>Tokens por validar</h3>
+            
+            <div button validate_token_button >
+                <span ng-click="vtc.validateTokens()">Validar Selecionados</span>
+            </div>
+            
+            <table style="width:100%">
+                <tr>
+                    <th>Estudiante</th>
+                    <th>Tokens</th>
+                    <th>Precio Total($)</th>
+                </tr>
+                
+                <tbody ng-repeat="t in vtc.studensTokens">
+                    <tr >
+                        <td style="position: relative">
+                            <img src="images/{{t.showDetail ? 'up' : 'down'}}.png" style="width:10px" ng-click="t.showDetail = !t.showDetail" collapse/>
+                            {{t.name}}
+                        </td>
+                        <td>{{t.nTokens}}</td>
+                        <td>{{t.totalPrice}}</td>
+                    </tr>
+                    
+                    <tr ng-show="t.showDetail">
+                        <td colspan="3" style="background-color: #cccccc;">
+                            <table style="width:100%" subtable>
+                                <tr>
+                                    <th>Validar</th>
+                                    <th>Numero de Orden / Order Number</th>
+                                    <th>Fecha</th>
+                                    <th>Tokens</th>
+                                    <th>Costo / Price</th>
+                                </tr>
+                                
+                                <tr ng-repeat="bill in t.bills" style="background-color: #e6e7e9;; ">
+                                    <td><input type="checkbox" ng-model="bill.valid" style="width:20px"/></td>
+                                    <td>{{bill.orderNumber}}</td>
+                                    <td>{{vtc.dateFormat(bill.date)}}</td>
+                                    <td>{{bill.totalTokens}}</td>
+                                    <td>{{bill.totalPrice}}</td>
+                                </tr>                                  
+                            </table>    
+                        </td>
+                    </tr>                    
+                </tbody>    
+            </table>    
+        </article>   
+    </section>
+    
+    <section admin_cancel_class ng-controller="CancelClassController as ccc">
+        <h2>Clases Canceladas</h2>
+        
+        <article>
+            <div filter>
+                <input name ="userType" type="radio" ng-model="ccc.filter.typeUser" value="Teacher" selected/> Ver Profesores
+                <input name ="userType" type="radio" ng-model="ccc.filter.typeUser" value="Student"/> Ver Alumnos    
+            </div>
+            
+            <table style="width:100%">
+                <tr>
+                    <th>Usuario</th>
+                    <th>Tipo de Usuario</th>
+                    <th>Clases Canceladas</th>
+                    <th ng-show="ccc.filter.typeUser == 'Teacher'">Faltas Graves</th>
+                    <th ng-show="ccc.filter.typeUser == 'Student'">Sin retorno de tokens</th>                    
+                </tr>
+                
+                <tbody ng-repeat="resume in ccc.resumes | filter:ccc.filter">               
+                    <tr >
+                        <td>
+                            <img src="images/{{resume.showDetail ? 'up' : 'down'}}.png" style="width:10px" ng-click="resume.showDetail = !resume.showDetail" collapse/>
+                            {{resume.name}}
+                        </td>
+                        <td>{{resume.typeUser}}</td>
+                        <td>{{resume.nCanceledClass}}</td>
+                        <td ng-show="ccc.filter.typeUser == 'Teacher'">{{resume.nFatalWarnnings}}</td>
+                        <td ng-show="ccc.filter.typeUser == 'Student'">{{resume.reverseTokens}}</td> 
+                    </tr>
+                    
+                    <tr ng-show="resume.showDetail">
+                        <td style="background-color: #cccccc;" colspan="4">
+                            <table style="width:100%">
+                                <tr>
+                                    <th>Estudiante</th>
+                                    <th>Profesor</th>
+                                    <th>Fecha</th>
+                                    <th ></th>
+
+                                </tr>
+                                
+                                <tr ng-repeat="classs in resume.classs" style="background-color: #e6e7e9;">
+                                    <td>{{classs.studentName}}</td>
+                                    <td>{{classs.teacherName}}</td>
+                                    <td>{{ccc.dateFormat(classs.date)}}</td>
+                                    <td ng-show="ccc.filter.typeUser == 'Teacher'">{{classs.fatalWarnning ? 'Falta Grave' : 'Falta Leve'}}</td>
+                                    <td ng-show="ccc.filter.typeUser == 'Student'">{{classs.reverseTokens ? 'Con regreso de tokens' : 'Sin regreso de tokens'}}</td>                                      
+                                </tr>
+                            </table>
+                        </td>    
+                    </tr>
+                </tbody>    
+            </table>    
+        </article>    
+    </section>
+    
+    <section ng-controller="TeacherPaymentController as tpc">
+        <h2>Pagar a profesores</h2>
+        
+        <article>
+            <div button payment_button>
+                <span ng-click="tpc.payment()">Pagar</span>
+            </div>
+                    
+            <table style="width:100%">
+                <tr>
+                    <th>Profesor</th>
+                    <th>Numero de clases normales</th>
+                    <th>Primeras clases</th>
+                    <th>Pagar</th>
+                </tr>
+                
+                <tbody ng-repeat="classs in tpc.classsCancel">
+                    <tr >
+                        <td>
+                            <img src="images/{{classs.showDetail ? 'up' : 'down'}}.png" style="width:10px" ng-click="classs.showDetail = !classs.showDetail" collapse/>
+                            {{classs.name}}
+                        </td>
+                        <td>{{classs.nClasss}}</td>
+                        <td>{{classs.nFirstClasss}}</td>
+                        <td><input type="checkbox" ng-model="classs.paymentAll" ng-change="tpc.paymentAll(classs)"/></td>
+                    </tr>
+                    
+                    <tr ng-show="classs.showDetail">
+                        <td style="background-color: #cccccc;" colspan="4">
+                            <table style="width:100%">
+                                <tr>
+                                    <th>Estudiante</th>
+                                    <th>Fecha</th>
+                                    <th>Pagar</th>
+                                    <th>Primera clase</th>
+                                </tr>
+                                
+                                <tr ng-repeat="classsDetail in classs.detail" style="background-color: #e6e7e9;">
+                                    <td>{{classsDetail.studentName}}</td>
+                                    <td>{{tpc.dateFormat(classsDetail.date)}}</td>
+                                    <td><input type="checkbox" ng-model="classsDetail.payment"/></td>
+                                    <td>{{classsDetail.firstClass ? "Si" : "No"}}</td>
+                                </tr>
+                            </table>
+                        </td>    
+                    </tr>
+                </tbody>    
+            </table>    
+        </article>           
+    </section>
+    
+    <section admin_cancel_class ng-controller="ReservedDoneClassController as rdcc">
+        <h2>Clases Reservadas y terminadas</h2>
+        
+        <article>
+            <div filter>
+                <input name ="userType" type="radio" ng-model="rdcc.filter.typeUser" value="Teacher" selected/> Ver Profesores
+                <input name ="userType" type="radio" ng-model="rdcc.filter.typeUser" value="Student"/> Ver Alumnos    
+            </div>
+            
+            <table style="width:100%">
+                <tr>
+                    <th>Usuario</th>
+                    <th>Tipo de Usuario</th>
+                    <th>Clases Reservadas</th>
+                    <th>Clases Terminadas</th>
+                </tr>
+                
+                <tbody ng-repeat="resume in rdcc.resumes | filter:rdcc.filter">               
+                    <tr >
+                        <td>
+                            <img src="images/{{resume.showDetail ? 'up' : 'down'}}.png" style="width:10px" ng-click="resume.showDetail = !resume.showDetail" collapse/>
+                            {{resume.name}}
+                        </td>
+                        <td>{{resume.typeUser}}</td>
+                        <td>{{resume.nReservedClass}}</td>
+                        <td>{{resume.nDoneClass}}</td>
+                    </tr>
+                    
+                    <tr ng-show="resume.showDetail">
+                        <td style="background-color: #cccccc;" colspan="4">
+                            <table style="width:100%">
+                                <tr>
+                                    <th>Estudiante</th>
+                                    <th>Profesor</th>
+                                    <th>Fecha</th>
+                                    <th >Estatus</th>
+
+                                </tr>
+                                
+                                <tr ng-repeat="classs in resume.classs" style="background-color: #e6e7e9;">
+                                    <td>{{classs.studentName}}</td>
+                                    <td>{{classs.teacherName}}</td>
+                                    <td>{{rdcc.dateFormat(classs.date)}}</td>
+                                    <td>{{classs.status}}</td>
+                                </tr>
+                            </table>
+                        </td>    
+                    </tr>
+                </tbody>    
+            </table>    
+        </article>    
+    </section>    
+</div>

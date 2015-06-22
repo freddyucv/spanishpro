@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<div admin_page>
+    <h1>Administrador</h1>
+    
+    <section>
+        <div register_teacher_button button  ng-click="rc.showRegister('Teacher')" ng-controller="RegisterController  as rc">
+            <span>Registrar Profesores</span>
+        </div>
+    </section>
+        
+    <section ng-controller="ConfigController  as cc" class_config>
+        <h2>Servidor de correo</h2>
+        <article>
+            <label label_big>Servidor</label><input type="text" ng-model="cc.config.email.service"/>
+        </article>
+        
+        <article>
+            <label label_big>Usuario</label><input type="text" ng-model="cc.config.email.auth.user"/>
+        </article>
+        
+        <article>   
+            <label label_big>Password</label><input type="text" ng-model="cc.config.email.auth.pass"/>
+        </article>
+        
+        <h2>Clases</h2>
+        <article>
+            <label label_big>Precio de los tokens</label><input type="text" ng-model="cc.config.tokensPrice"/><label label_little>&nbsp;$</label>
+        </article>
+        
+        <article>
+            <label label_big>Tiempo de antelacion para cancelar sin perder el tokens (alumnos)</label><input type="text" ng-model="cc.config.cancelTime"/><label label_little>&nbsp;Minutos</label>
+        </article>
+        
+        <article>
+            <label label_big>Tiempo de antelacion para cancelar sin obtener una falla grave (profesores)</label><input type="text" ng-model="cc.config.teacherCancelTime"/><label label_little>&nbsp;Minutos</label>
+        </article>
+        
+        <article>   
+            <label label_big>Tiempo de antelacion para reservar</label><input type="text" ng-model="cc.config.reserveTime"/><label label_little>&nbsp;Minutos</label>
+        </article>
+        
+        <article>   
+            <label label_big>Limite de clases para reservar/agendar por dia</label><input type="text" ng-model="cc.config.limitClassToReserveToDay"/>
+        </article>
+        
+        <article>
+            <div button config_save_button>
+                <span ng-click="cc.save()">Guardar</span>
+            </div>
+        </<article>  
+    </section>
+    
+    <section ng-controller="CombosController  as comc" combos_config>
+        <h2>Combos</h2>
+        
+        <div combos_config_data>
+            
+            <article>
+                <label label_big>Nombre del Combo</label><input type="text" ng-model="comc.comboName" required/>
+                <img src="user_register/images/x_red.png" error/>
+                <label error_text error></label>              
+            </article>
+            
+            <article>
+                <label label_big>Numero de tokens</label><input type="text" ng-model="comc.nTokens" required/>
+                <img src="user_register/images/x_red.png" error/>
+                <label error_text error></label>                        
+            </article>
+            
+            <article>                
+                <label label_big>Precio</label><input type="text" ng-model="comc.price" required/>
+                <img src="user_register/images/x_red.png" error/>
+                <label error_text error></label>
+                <label label_little>$</label>
+            </article>
+        </div>
+        
+        <article>                
+            <div add ng-click="comc.addCombo()"  button><span>+</span></div>            
+        </article>
+        
+        <article>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>N Tokens</th>
+                    <th>Precio ($)</th>
+                </tr>
+                
+                <tr ng-repeat="c in comc.combos">
+                    <td>{{c.comboName}}</td>
+                    <td>{{c.nTokens}}</td>
+                    <td>{{c.price}}</td>
+                </tr>                    
+            </table>    
+        </article>
+        
+        
+        <article>
+            <div button config_save_button>
+                <span ng-click="comc.saveCombos()">Guardar</span>
+            </div>
+        </<article>  
+    </section>        
+</div>    

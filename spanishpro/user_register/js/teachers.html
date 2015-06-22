@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<div teacher_list_page  ng-controller="ListTeacherController  as ltc">
+    <h1>Lista de Profesores / List Teachers</h1>
+    
+    <div list_container>
+        <span ng-repeat="teacher in ltc.teachers" teacher_item
+              ng-mouseover="ltc.over = teacher['_id']"
+              ng-class="{search_selected: ltc.over == teacher['_id']}"
+              ng-Mouseleave="ltc.over = -1"
+              ng-click="ltc.teacher = teacher; ltc.showDetail = true">
+            
+            <img src="{{teacher.picture ? teacher.picture : 'images/default_perfil.png'}}" border="1"/>
+            <span data>
+                <label class="key">Nombre / Name:</label>
+                <div>{{teacher.name}}</div>
+                <label class="key">Experticia / Expertice:</label>
+                <div expertice>{{teacher.expertice}}</div>
+                <div>...</div>
+            </span>    
+        </span>    
+    </div>    
+    
+    <div class="dialog techer_dialog" ng-show="ltc.showDetail">
+        
+        <span close ng-click="ltc.showDetail = false">X</span>
+        
+	<div picture>
+		<img style="width: 30%" src="{{ltc.teacher.picture ? ltc.teacher.picture : 'images/default_perfil.png'}}" border="1" class="perfil_picture" />		
+	</div>
+                
+        <div>
+                <label class="key">Nombre / Name: </label>
+                <label>{{ltc.teacher.name}}</label> 			
+        </div>
+    
+         <div>
+                 <label class="key">Correo / Email: </label>                             
+                 <label>{{ltc.teacher.email}}</label> 
+         </div>
+               
+        <div>
+           <label class="key">Pa&iacute;s / Country: </label>	   
+           <label>{{ltc.teacher.country}}</label> 
+        </div>
+               
+        <div>
+           <label class="key">Ciudad/ City: </label>				   
+           <label>{{ltc.teacher.city}}</label> 
+        </div>
+               
+        <div>
+           <label class="key">Ocupaci&oacute;n / Occupation: </label>
+           <label>{{ltc.teacher.occupation}}</label> 
+        </div>
+   
+        <div>
+           <label class="key">Fecha de Nacimiento / Day of birth: </label>
+           <label >{{ltc.teacher.dayofBirth}}</label> 
+        </div>
+               
+        <div>
+           <label class="key">Intereses / Hobbies: </label>
+        </div>
+        
+        <div>
+                <label>{{ltc.teacher.hobbies}}</label> 
+        </div>
+   
+        <div>
+           <label class="key">Experticia / Expertice: </label>
+        </div>
+        
+        <div>
+                <label>{{ltc.teacher.expertice}}</label> 
+        </div>
+    </div>
+</div>    
+

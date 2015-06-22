@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+
+<div tokens_page ng-controller="TokenController  as tc">
+    <h1>Tokens</h1>
+    
+    <div id="tokens_main" container >
+        <div buy_tokens_button button  ng-click="tc.showBuyTokensDialog()"/>
+            <span>Comprar Tokens/ Buy Tokens</span>
+        </div>
+        
+        <div current_tokens>
+            <h3>Tokens Actuales<h3>
+            <span>{{currentUser.tokens}}</span>
+        </div>
+ 
+        <div>
+            <h2>Historial / History</h2>
+            <table>
+                <tr>
+                    <th>Numero de Orden / Order Number</th>
+                    <th>Fecha</th>
+                    <th>Tokens</th>
+                    <th>Costo / Price</th>
+                </tr>
+                
+                <tbody ng-repeat="bill in tc.bills">
+                    <tr>
+                        <td>
+                             <img src="images/{{bill.showDetail ? 'up' : 'down'}}.png" style="width:10px" ng-click="bill.showDetail = !bill.showDetail" collapse/>
+                            {{bill.orderNumber}}
+                        </td>
+                        <td>{{tc.dateFormat(bill.date)}}</td>
+                        <td>{{bill.totalTokens}}</td>
+                        <td>{{bill.totalPrice}}</td>
+                    </tr>
+                    
+                    <tr ng-show="bill.showDetail">
+                        <td colspan="4" style="background-color: #cccccc;">
+                            <table style="width:100%" subtable>
+                                <tr>
+                                    <th>Nombre / Name</th>
+                                    <th>Costo / Price</th>
+                                    <th>Cantidad / Quantity</th>
+                                    <th>Sub-total</th>
+                                </tr>
+                                
+                                <tr ng-repeat="item in bill.items" style="background-color: #e6e7e9; ">
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.price}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.price != "-" ? item.quantity * item.price : 0}}</td>
+                                </tr>                                  
+                            </table>    
+                        </td>
+                    </tr>                     
+                </tbody>    
+            </table>          
+        </div>
+    </div>
+
+    <div buy_tokens_dialog for="tokens_main" class="dialog" style="display:none" >
+        <div close onclick="closeDialog('[buy_tokens_dialog]')">X</div>
+        <h1>Compra de Tokens / Purchase Tokens</h1>
+        <div>
+            <h3>Por Token / By Tokens</h3>
+        </div>
+    
+        <div>
+            <label>Numero de tokens para comprar / Tokens to buy</label>
+            <input type="text" class="little_text" ng-model="tc.toBuy" ng-Keyup="tc.calculatePay()" numeric/>
+            <img src="user_register/images/x_red.png" error/>        
+            <label label_little>$</label>
+        </div>        
+
+        <div>
+            <label>Precio del token / Token price <span price>{{config.tokensPrice}}</span> $</label>
+        </div>
+
+        <div>
+            <h3>Por Combo / By Combo</h3>
+            
+            <div combos_to_buy >
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Nombre/Name</th>                        
+                        <th>Tokens</th>
+                        <th>Precio/Price ($)</th>
+                    </tr>
+                    
+                    
+                        <tr ng-repeat="c in combos" combos_container>
+                            <td>
+                                <input type="checkbox" ng-model="c.selected" ng-change="tc.calculatePay()" />
+                                                                 
+                            </td>
+                            <td>
+                                <input type="text" ng-model="c.quantity" ng-change="tc.calculatePay()" ng-disabled="!c.selected" numeric/>
+                                <img src="user_register/images/x_red.png" error />
+                            </td>
+                            <td>{{c.comboName}}</td>
+                            <td>TOKENS: {{c.nTokens}}</td>
+                            <td>PRICE: {{c.price}} $</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        
+
+        <div>
+            <label>Monto a pagar / Total to pay {{tc.toPay}} $</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" ng-model="tc.accept">Acepto los terminos y condiciones de spanishpro.net/ I accept the terms and conditions of spanishpro.net</input>
+        </div>
+    
+        <div>        
+            <div purchase_tokens_button button />
+                <span ng-click="tc.buy()" ng-disabled="{{tc.toPay == 0}}">Comprar</span>
+            </div>
+        </div>
+    
+        <form id="2co" action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
+          <input type='hidden' name='sid' value='901274811' />
+          <!--<input type='hidden' name='sid' value='901272924' />-->
+          <input type='hidden' name='mode' value='2CO' />
+                  
+
+        </form>        
+    </div>
+</div>
+

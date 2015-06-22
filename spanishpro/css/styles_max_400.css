@@ -1,0 +1,152 @@
+[main_container]{
+    width: 100%;
+}
+
+[menu] a{
+    font-size: 7px;
+    margin-right: 0px;
+    right: 0px;
+    
+    
+}
+
+[home_head] [menu]{
+    top:2%;
+
+}
+
+
+[home_head] [text]{
+    display: none;
+}
+
+[home_head] [text_hide], [home_head] [text_hide2]{
+    display: none;
+}
+
+
+
+
+[time]  [clock_cointainer] [clock] span{
+    font-size: 10px;
+}
+
+[footer] [menu_container]{
+    white-space: normal;
+}
+
+
+[footer]{
+    font-size: 8px;
+}
+
+[about_us] [container]{
+    width: 80%;
+    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%   );    
+    
+}
+
+[time] [clock_cointainer]{
+    margin-left: 4%;
+}
+
+[user_register] label, [login] label{
+    font-size: 10px;
+}
+
+[user_register] h1{
+    font-size: 12px;
+}
+
+[button]{
+    font-size: 8px;
+}
+
+[home_head] [register_button]{
+    top: 40%;
+      left: 50%;
+}
+
+.second_button{
+    font-size: 10px;
+
+}
+
+[home_head] [login_button]{
+    top: 57%;
+}
+
+[re_button]{
+    top: 40%;
+    
+}
+
+[home_head] [forget_password_button]{
+    top: 72%;
+}
+
+[logout_button]{
+    top: 72%;
+}
+
+
+[teacher_list_page] [teacher_item]{
+
+    width: 200px;
+    height: 100px;
+
+}
+
+[teacher_item] div{
+    font-size: 10px;   
+}
+
+[teacher_item] label{
+    font-size: 12px;
+}
+
+[teacher_list_page] .dialog{
+    width: 250px;
+}
+
+h2{
+    font-size: 12px;
+
+}
+
+[wall_calendar] [container]{
+
+    font-size: 10px;
+}
+
+[hour] label{
+
+    font-size: 12px;
+   
+}
+
+[user] [name]{
+
+    font-size: 10px;
+
+}
+
+[days] div{
+    width: 20%;
+    font-size: 9px;
+
+}
+
+
+.combo_container span{
+    width: 25%;
+     height: 120px;
+}
+
+.techer_dialog{
+    min-width: 200px;
+    
+}

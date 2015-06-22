@@ -1,0 +1,27 @@
+[menu] a{
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+[home_head] [menu]{
+    right: 5px;
+}
+
+[home_head] [register_button]{
+    padding: 12px;
+}
+
+[home_head] [text_hide] [content]{
+    font-size: 16px;
+    
+}
+
+[home_head] [text_hide2] [content]{
+    font-size: 16px;
+    
+}
+[user_message]{
+
+    font-size: 16px;
+
+}

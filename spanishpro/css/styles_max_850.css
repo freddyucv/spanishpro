@@ -1,0 +1,64 @@
+ [menu] a{
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+[home_head] [text]{
+    left: 60%;
+    width: 40%;
+
+}
+
+[home_head] [text_hide]{
+    width: 38%;
+    left: 61%;
+
+}
+
+[home_head] [text_hide] [title]{
+    font-size: 11px;
+}
+
+[home_head] [text_hide] [content]{
+    font-size: 14px;
+    
+}
+
+[home_head] [text_hide2] [content]{
+    font-size: 14px;
+    
+}
+[home_head] [register_button]{
+    left: 61%;
+    font-size: 15px;
+}
+
+[title] span{
+    font-size: 15px;
+    
+}
+
+[about_us] p{
+    font-size: 11px;
+}
+
+
+
+[footer]{
+    font-size: 12px;
+}
+
+[time]  [clock_cointainer] [clock] span{
+    font-size: 14px;
+}
+
+.second_button{
+
+    padding: 5px;
+
+}
+[user_message]{
+
+    font-size: 14px;
+
+}

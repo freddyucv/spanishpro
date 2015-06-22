@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
+
+<div another_head>
+    
+    <div>
+        <img src="images/foto1.png"/>
+        
+    </div>
+    
+    <img src="images/logo.png" img_logo/>
+</div>
+        
+        
+<div static_page ng-app ng-init="language='esp'" >
+    <input type="radio" ng-model="language" name="language"  value="esp"/> Español
+    <input type="radio" ng-model="language"  name="language" value="en"/> Ingles
+    
+    <div ng-show="language=='esp'">
+        <h1>Pioneros</h1>
+    
+    
+        <img src="images/pionners.png" style="width: 50%"/>
+            
+        <div content>
+            <p>        
+            Estamos en la fase inicial buscando pioneros que estén interesados en ganar clases gratis 
+            refiriendo el sitio web a nuevos clientes.
+            </p>
+            <p>
+            El esquema funciona de la siguiente manera:
+            </p>
+            <p>
+            Cuando refieras a un cliente y este se inscriba, pondrá tu nombre en el formato de registro como 
+            la persona que lo refirió. Ese cliente de inmediato queda bajo tu nombre y cuando genere su 
+            primera transacción, se te darán clases gratis así:
+            </p>
+            
+            <ul>
+                <li>Si el cliente compra 1 clase, el pionero que lo refirió <b>gana 1 clase gratis.</b></li>
+                <li>Si el cliente compra el combo <b>Silver</b> de 5 clases, el pionero <b>gana 2 clases gratis.</b></li>
+                <li>Si el cliente compra el combo <b>Gold</b> de 10 clases, el pionero <b>gana 3 clases gratis.</b></li>
+            </ul>
+            
+            <p>Esto solo aplica para la primera transacción del cliente referido.</p>
+    
+            <p>Los tokens serán puestos en tu cuenta tras validación del administrador.</p>
+    
+            <p>
+            <b>No hay límite para ningún pionero. El esquema es muy generoso y estará por un tiempo </b>
+            </p>
+            
+            <p>
+                <b>Aprovéchalo y gana una vida de clases gratis de español!</b>
+            </p>
+            
+            <p>Para participar inscríbete primero como cliente en Spanishpro.net y envía un correo al 
+            administrador (admin@spanishpro.net). Éste te contactará dándote ingreso oficial al programa de 
+            </p>
+            
+            <p>
+                Aprovechando esta oportunidad podrás tener clases gratis por mucho tiempo. 
+            </p>
+        </div>
+    </div>
+    
+    <div ng-show="language=='en'">
+        <div content>
+            <h1>Pioneers</h1>
+                    
+            <img src="images/pionners_en.png" style="width: 50%"/>
+            <p>            
+            We are at an initial fase looking for pioneers that are interested in winning free classes by referring 
+            the website to other people interested.
+            </p>
+            <p>
+            The scheme will work as following:
+            </p>
+            <p>
+            When you refer a new client and he registers he will put your name in the registration form as the 
+            person who referred him. This client will be under your name and when he generates his first 
+            transaction you will be given free classes following this scheme:
+            </p>
+            
+            <ul>
+                <li>If the client buys one class, the pioneer will immediately earn 1 free class</li>            
+                <li>If the client buys the Silver package of 5 classes, the pioneer will immediately earn 2 free classes</li>             
+                <li>If the client buys the Gold package of 10 classes, the pioneer will immediately earn 3 free classes</li> 
+            </ul>
+            
+            <p>This only applies for the first transaction of the referred client.</p>
+            <p>The tokens will be added to the pioneer´s account after the manager´s validation.</p>
+    
+            <p><b>There is no limit for this scheme. The scheme is really generous and will be up for just a limited</b></p> 
+    
+            <p><b>Take advantage of it and earn a whole life full of free Spanish classes!</b></p>
+            <p>
+            To participate subscribe yourself as a client and then contact the website´s manager         
+            (admin@spanishpro.net). He will contact you afterwards giving you official access to the Pioneers 
+            </p>
+            <p>By taking advantage of this opportunity you will have free classes for a long time.</p   >
+        </div>
+    </div>        
+</div>    

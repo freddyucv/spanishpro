@@ -1,0 +1,63 @@
+[main_container]{
+    width: 90%;
+}
+
+[menu] a{
+    font-size: 11px;
+    margin-right: 4px;
+    
+}
+
+
+[home_head] [text_hide] [title]{
+    font-size: 10px;
+}
+
+[home_head] [text_hide] [content]{
+    font-size: 13px;
+    
+}
+
+[home_head] [text_hide2] [content]{
+    font-size: 13px;
+    
+}
+
+[button]{
+    font-size: 12px;
+}
+
+[title] span{
+    font-size: 14px;
+    
+}
+
+[about_us] p{
+    font-size: 10px;
+}
+
+[title] .head_image{
+    position: absolute;
+    height: 15px;
+ 
+}
+
+
+[time]  [clock_cointainer] [clock] span{
+    font-size: 12px;
+}
+
+[hour] label{
+
+    font-size: 14px;
+
+}
+[user_message]{
+
+    font-size: 13px;
+
+}
+[about_us] [container]{
+
+    height: 220px;
+}

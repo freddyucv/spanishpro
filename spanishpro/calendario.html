@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<div wall_calendar ng-controller="WallCalendarController as wcc">
+    <h1>Wall/Calendar</h1>
+    
+    <p>
+        <div>
+            Puede reservar de dos maneras, publique una hora en que desea tener clase en “My Wall” o revise el “Wall Calendario Profesores
+        </div>
+        <div>
+            Teachers” para reservar la hora de algún profesor / You can reserve by two ways, publish an hour in which you want to have class in
+            “My Wall/Calendar” or check what the teachers offered in the “Wall Calendario Profesores / Teachers” to reserve an hour of any
+            teacher”
+        </div>
+    </p>
+    
+    <p>
+        <div>
+            No se preocupe por la diferencia horaria, el Sistema hace la conversión automáticamente entre la hora de donde usted está y la
+            hora donde está su profesor
+        </div>
+        <div>
+            Do not worry about the time difference between your time and your teachers´s time, the sistem makes
+            the conversation automatically”
+        </div>    
+    </p>
+    
+    <div container>
+       
+        
+        <div days>
+          <h2>Selecione el dia / Select the day</h2>  
+          <div ng-repeat="day in wcc.days" ng-mouseover="wcc.maybeSelectedDay = day.id"
+                      ng-class="{search_selected: (wcc.maybeSelectedDay == day.id) || (wcc.selectedDay.id == day.id),
+                                unselected:wcc.maybeSelectedDay != day.id}"
+                      ng-Mouseleave="wcc.maybeSelectedDay = -1"
+                      ng-click="wcc.selectedDay = day;wcc.dateChange();wcc.getCalendar()">
+              <span>{{day.date}} - {{day.month}}</span>
+          </div>
+        </div>  
+               
+        <div book ng-class="{calendar_big: currentUser, calendar_little: !currentUser}" ng-show="currentUser && ((wcc.filter == 'My' && currentUser.type == 'Student') || currentUser.type == 'Teacher')">                  
+            <h2>Publicar/Publish</h2>
+            
+            <div container ng-show="currentUser.type == 'Teacher' || (currentUser.type == 'Student' && currentUser.tokens > 0)">
+                <label>Hora/Time</label>
+                
+                <img down_up src="images/down.png" style="width: 10px;height: 10px" " ng-click="wcc.downHour()"/>
+                
+                <span input>
+                    {{wcc.currentDate.currentTime}}                        
+                </span>
+                
+                <img down_up src="images/up.png" style="width: 10px;height: 10px" ng-click="wcc.upHour()"/>
+                                                             
+                
+                <span am_pm ng-mouseover="wcc.almostSelectAMPM = true"
+                        ng-class="{AMPM_selected: wcc.almostSelectAMPM}" ng-Mouseleave="wcc.almostSelectAMPM = false"
+                        ng-click="wcc.changeAMPM()">
+                    {{wcc.currentDate.AMPM}}
+                </span>
+                
+                <div book_button button ng-click="wcc.book()">
+                    <span>Publicar / Publish</span>
+                </div>                  
+            </div>
+            
+            <div ng-show="(currentUser.type == 'Student' && currentUser.tokens == 0)">
+                <label>No tiene tokens para publicar / You dont have tokens to publish</label>    
+            </div>        
+                     
+        </div>
+ 
+        <div filters >
+                <h2>Ver Calendario</h2>
+                <div ng-show="currentUser && currentUser.type == 'Teacher'">
+                    <input type="radio" ng-model="wcc.filter" value="Student" ng-change="wcc.getCalendar()">Wall/Calendario Estudiantes/ Student</input>
+                </div>
+        
+                <div ng-show="currentUser && currentUser.type == 'Student'">
+                    <input type="radio" ng-model="wcc.filter" value="My" ng-change="wcc.getCalendar()">My Wall/Calendario</input>
+                </div>
+    
+                <div>
+                    <input type="radio" ng-model="wcc.filter" value="Teacher" ng-change="wcc.getCalendar()">Wall/Calendario Profesores / Teachers</input>
+                </div>
+
+                <label note ng-show="currentUser && currentUser.type == 'Student' && currentUser.tokens > 0 && wcc.filter != 'My'">
+                    Haga click para reservar / Click to reserve
+                </label>
+        </div>
+     
+
+        <div class="cork">                    
+            <div hours>
+                <div ng-repeat= "hour in wcc.calendar">
+                    <div hour>
+                        <img src="images/notasverde.png"/>
+                        <label>{{hour.hourLabel}}</label>                        
+                    </div>
+                    
+                    <div users>
+                        <span user ng-repeat= "user in hour.users"
+                        ng-mouseover="wcc.maybeReserve = user.classId"
+                        ng-Mouseleave="wcc.maybeReserve = -1"
+                        ng-class="{search_selected_calendar: (wcc.maybeReserve == user.classId) && currentUser && currentUser.type != wcc.filter  && wcc.filter != 'My'}"
+                        ng-click= "wcc.reserve()"
+                        >
+                            <img marco src="images/fotos-prof.png"/>
+                            <img picture src="{{user.picture ? user.picture : 'images/default_perfil.png'}}"/>
+                            <label name>{{user.name}}</label>
+                            <label first_class ng-show="user.firstClass">Primera clase</label>
+                        </span>    
+                    <div>    
+                </div>    
+            </div>  
+        </div> 
+    </div>    
+</div>    

@@ -1,0 +1,10 @@
+jspm_packages
+bower_components
+.idea
+.divshot-cache/
+node_modules
+.DS_STORE
+dist
+*.komodoproject
+spanishpro/uploadFile/
+uploadFile/

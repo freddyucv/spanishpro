@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+
+<div classs_page>
+    <h1>Muro de Calendario / Wall Calendar</h1>
+    
+    <div cork ng-controller="ClassController  as cc">
+        <div calendar>
+            <img src="images/cbackground.PNG"/>
+            
+            <div date_container>
+                <div date ng-repeat = "date in cc.dates">
+                    <span day>{{date.day}} - </span><span month>{{date.month}}</span>
+                </div>
+            </div>            
+        </div>
+        
+        <div classs>
+                    
+        </div> 
+    </div>    
+</div>    

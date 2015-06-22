@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+
+<div perfil_page ng-controller="PerfilController  as pc">
+
+	
+	<div picture>
+		<img src="{{currentUser.picture ? currentUser.picture : 'images/default_perfil.png'}}" border="1" class="perfil_picture" ng-hide="pc.files[0].type.indexOf('image') > -1"/>
+		<img ngf-src="pc.files[0]" ng-show="pc.files[0].type.indexOf('image') > -1">
+		<div picture_button button  ngf-select ng-model="pc.files" ng-show="pc.edit">
+			<span>Foto/Picture</span>
+		</div>
+		<div ng-hide="pc.edit">{{pc.log}}</div>
+	</div>
+		
+				
+	<div panel>
+		
+		<h1>Perfil / Profile</h1>
+		
+		<img edit class="imgPerfil"
+					 title="{{pc.edit ? 'Actualizar/Update' : 'Editar/Edit'}}"
+					 src="{{pc.edit ? 'images/save_perfil.png' : 'images/edit_perfil.png'}}"
+					 ng-click="pc.changeStatus()">
+		
+		<div>
+			Llene los campos con su información, para que el profesor personalice la clase hacia lo que a usted le interesa,
+			puede cambiarlo cuando desee / Fill all the information fields so that the teacher can taylor the classes to your
+			interests, you can change  them whenever you want			
+		</div>
+		
+		<div>			
+			<div>
+				<label class="key">Nombre / Name: </label>
+				<label ng-hide="pc.edit">{{currentUser.name}}</label> 
+				<input ng-model="currentUser.name" ng-show="pc.edit" required></input>
+				<img src="user_register/images/x_red.png" error/>
+				<label error_text error></label>			
+			</div>
+		   
+			<div>
+				<label class="key">Correo / Email: </label>
+				<input ng-model="currentUser.email" ng-show="pc.edit" required></input>
+				<img src="user_register/images/x_red.png" error/>
+				<label error_text error></label>					
+				<label ng-hide="pc.edit">{{currentUser.email}}</label> 
+			</div>
+		   
+			<div>
+				<label class="key">Skype: </label>
+				<label ng-hide="pc.edit">{{currentUser.skype}}</label> 
+				<input ng-model="currentUser.skype" ng-show="pc.edit" required></input>
+				<img src="user_register/images/x_red.png" error/>
+				<label error_text error></label>			
+			</div>
+
+			<div>
+			   <label class="key">Pa&iacute;s / Country: </label>
+			   <select required ng-model="currentUser.country" ng-change="pc.loadCities()" ng-show="pc.edit" country_perfil>
+				<option value="{{country.iso}}" ng-repeat="country in pc.countries"  ng-selected="currentUser.country == country.iso">{{country.country_name}}</option> 
+				
+			   </select>
+				<img src="user_register/images/x_red.png" error/>
+				<label error_text error></label>				   
+			   <label ng-hide="pc.edit">{{currentUser.country}}</label> 
+			</div>
+		   
+			<div>
+			   <label class="key">Ciudad/ City: </label>
+			   <select required cities_perfil ng-model="currentUser.city" ng-show="pc.edit">
+				<option value="{{city}}" ng-repeat="city in pc.cities"  ng-selected="currentUser.city == city">{{city}}</option> 
+			   </select>
+				<img src="user_register/images/x_red.png" error/>
+				<label error_text error></label>				   
+			   <label ng-hide="pc.edit">{{currentUser.city}}</label> 
+			</div>
+		   
+			<div>
+			   <label class="key">Ocupaci&oacute;n / Occupation: </label>
+			   <input ng-model="currentUser.occupation" ng-show="pc.edit"></input>
+			   <label ng-hide="pc.edit">{{currentUser.occupation}}</label> 
+			</div>
+		   
+			<div>
+			   <label class="key">Fecha de Nacimiento / Day of birth: </label>
+			   <input ui-date="pc.dateOptions"  ng-model="currentUser.dayofBirth" ng-show="pc.edit" required/>
+			   <label ng-hide="pc.edit">{{currentUser.dayofBirth}}</label> 
+			</div>
+		   
+			<div>
+			   <label class="key">Intereses / Hobbies: </label>
+			</div>
+			
+			<div>
+				<textarea rows="4" cols="50" ng-model="currentUser.hobbies" ng-show="pc.edit"></textarea>
+				<label ng-hide="pc.edit">{{currentUser.hobbies}}</label> 
+			</div>
+		   
+			<div>
+			   <label class="key">Experticia / Expertice: </label>
+			</div>
+			
+			<div>
+				<textarea rows="4" cols="50" ng-model="currentUser.expertice" ng-show="pc.edit"></textarea>
+				<label ng-hide="pc.edit">{{currentUser.expertice}}</label> 
+			</div>
+			
+		</div>
+		
+
+		<div>
+			<h2>Clases</h2>
+			
+			<div>
+				<label>Selecione status</label>
+				<select ng-model="statusSearch.status">
+					<option value="">Todos</option>
+					<option value="book">Publicado/Published</option>
+					<option value="reserved">Reservado / Reserved</option>
+					<option value="done">Realizada / Done</option>
+					<option value="canceled">Cancelada / Cancel</option>
+				</select>	
+			</div>
+			
+			<table style="margin-top: 5%;width: 100%">
+				<tr>
+					<th>Fecha/Date</th>
+					<th>Estado/Status</th>
+					<th>{{currentUser.type == 'Student' ? 'Profesor/Teacher' : 'Estudiante/Students'}}</th>
+					<th></th>	
+				</tr>
+				
+				<tr ng-repeat="c in pc.classs  | filter:statusSearch |filter:pc.isFilter">
+					<td>{{pc.dateFormat(c.date)}}</td>
+					<td>{{pc.getStatus(c.status)}}</td>
+					<td>{{currentUser.type == 'Student' ? c.teacherName : c.studentName}}</td>
+					<td>
+				        <div ng-show="c.status == 'reserved' || c.status == 'book'" cancel_button button  ng-click="pc.cancel(c)">
+				            <span>Cancelar</span>
+				        </div>						
+					</td>			
+				</tr>		
+			</table>
+			
+		</div>			
+	</div>
+	
+	
+</div>

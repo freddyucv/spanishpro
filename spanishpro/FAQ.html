@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
+
+<div another_head>
+    
+    <div>
+        <img src="images/foto1.png"/>
+        
+    </div>
+    
+    <img src="images/logo.png" img_logo/>
+</div>
+        
+        
+<div static_page ng-app ng-init="language='esp'" >
+    <input type="radio" ng-model="language" name="language"  value="esp"/> Español
+    <input type="radio" ng-model="language"  name="language" value="en"/> Ingles
+    
+    <div ng-show="language=='esp'">
+        <h1>Preguntas frecuentes</h1>
+        
+        <h2  ng-click="to_show=1">1. Qué ocurre si hay problemas técnicos durante la clase?</h2>
+        <div ng-show="to_show==1">
+            <p>                
+                Si ocurre un problema con el sonido y con la calidad de la llamada durante la clase debido
+                a un internet débil o error con Skype, usted no perderá la clase y se le repondrá de 
+                acuerdo al siguiente plan:
+            </p>
+            <ul>
+               <li>
+                    Si la comunicación se corta, el profesor intentará continuarla durante los 15
+                    minutos restantes de la hora. Por ejemplo si la clase es de 10:00 a 10:45, se podrá 
+                    intentar dar la totalidad de los 45 minutos entre 10:00 y 11:00. Si se logra dar 45 
+                    minutos en plena calidad, no se realizará ninguna devolución.                
+                </li>
+               
+               <li>
+                    Si durante la hora no es posible continuar y realizar la clase en plena calidad:
+                    
+                    <ul>
+                        <li>
+                            Tanto profesor como alumno deben avisar al administrador del tiempo que
+                            se alcanzó a hacer clase a plena calidad (Para avisar esto se enviará un 
+                            correo electrónico después de la clase tanto al profesor como al alumno 
+                            para recibir retroalimentación de ambos). Ante ambos testimonios el 
+                            administrador enviará un correo al cliente asegurándole que puede volver a 
+                            reservar al profesor a una hora de su conveniencia y que el respectivo 
+                            crédito se le devolverá después de la reserva. En este tiempo, se realizará la 
+                            clase durante los minutos restantes que no se pudieron dar + 10 minutos 
+                            de cortesía por los problemas.
+                            
+                            <ul>
+                               <li>
+                                    Por ejemplo si una clase se cortó y no se pudo continuar y sólo se
+                                    alcanzaron a dictar 25 minutos de clase. El estudiante tendrá 
+                                    derecho a reservar al profesor y tomar los 20 minutos restantes más 
+                                    10 minutos de cortesía.                                
+                                </li>
+                            </ul>    
+                        </li>
+                    </ul>                    
+               </li> 
+            </ul>
+            
+            <p>Algunas recomendaciones para evitar estos problemas son:</p>
+            <ul>
+                <li>1. Asegúrese que tiene la última versión de Skype. Para descargar la última versión vaya a Skype.com</li>
+                <li>
+                    2. Utilice audífonos: Si escucha eco es porque los parlantes de su interlocutor
+                    están demasiado alto. Para esto, use audífonos y el eco desaparecerá de 
+                    inmediato.
+                </li>
+                <li>
+                    3. Ajuste la luz: Esto hace la diferencia de hablar ocn una sombra a vivir la 
+                    experiencia de una clase real.
+                </li>
+                <li>
+                    4. Minimice el sonido del ambiente: Intente encontrar un ambiente callado y 
+                    cerrado para tener su clase.
+                </li>
+                <li>
+                    5. Cierre otros programas o aplicaciones durante su clase, esto evitará que su 
+                    dispositivo se bloquee.
+                </li>    
+                <li>
+                    6. Utilice internet directo de un cable en lo posible en lugar de Wifi: Esto hará que 
+                    su conexión sea más fiable.
+                </li>
+            </ul>            
+        </div>
+        
+        <h2  ng-click="to_show=2">2. ¿Cómo puedo pagar por las lecciones?</h2>
+        <div ng-show="to_show==2">
+            Ofrecemos paquetes de 1, 5 o 10 tokens. Estamos actualmente aceptando tarjetas 
+            de crédito, débito y paypal a través de nuestra plataforma de pagos asocieada 
+            2checkout.com.            
+        </div>
+        
+        <h2  ng-click="to_show=3">3. ¿Cuál es el tema en la clase y la metodología?</h2>
+        <div ng-show="to_show==3">
+            El estudiante puede escoger cualquier tema para la clase. Promovemos 
+            principalmente la práctica de conversación, pero el estudiante es libre de pedir al 
+            profesor la práctica de cualquier tema en específico.
+            La metodología está descrita con mayor detalles en la sección de Cómo funciona?. 
+            Nos centramos en promover la conversación estructurada y fluída, logrando que el 
+            estudiante use toda su capacidad y vocabulario en español para explicarse 100% 
+            en Español.          
+        </div>
+        
+        <h2  ng-click="to_show=4">4. ¿Puedo preparer el examen DELE con Spanishpro.net?</h2>
+        <div ng-show="to_show==4">
+              Claro que puede. Con Spanishpro.net usted mejorará principalmente 2
+            habilidades: La comprensión oral y la producción oral.
+        </div>
+        
+        <h2  ng-click="to_show=5">5. Quienes son los profesores?</h2>
+        <div ng-show="to_show==5">
+            <p>
+                Los profesores son jóvenes estudiantes de todo tipo de disciplinas. Puedes
+                encontrar historiadores, ingenieros y artistas. Creemos que teniendo profesores de 
+                todo tipo de disciplinas hace nuestras clases interesantes y personalizadas para 
+                todo tipo de estudiantes. Los profesores no tienen un diploma en pedagogía de 
+                español, pero tienen instrucción según el método de conversación que 
+                proponemos.
+            </p>    
+        </div>
+        
+        <h2  ng-click="to_show=6">6. Cómo funciona el proceso de rotación</h2>
+        <div ng-show="to_show==6">
+            Promovemos que nuestros estudiantes mejoren su Español practicando con todo 
+            tipo de profesores de varias disciplinas. Por esta razón, ofrecemos una rifa de 5 
+            tokens a fin de mes entre todos los estudiantes que hayan tomado en el mes 
+            previo clase con al menos 4 profesores diferentes.          
+        </div>
+        
+        <h2  ng-click="to_show=7">7. ¿Puedo cancelar una clase?</h2>
+        <div ng-show="to_show==7">
+            <p>
+                Estamos orgullosos de decir que tenemos la política de cancelación más flexible en 
+                la industria.
+            </p>
+            <p>
+                El estudiante puede cancelar en cualquier momento previo a la clase sin ningún 
+                costo mientras sea al menos 30 minutos antes de la clase. Si cancela con más de 30 
+                minutos de anticipación, el token será devuelto de manera automática. Si cancela 
+                con menos de 30 minutos de anticipación el token no será devuelto.
+            </p>    
+        </div>
+        
+        <h2  ng-click="to_show=8">8. Qué ocurre si mi profesor me cancela?</h2>
+        <div ng-show="to_show==8">
+            En general los profesores no deberían cancelar en ninguna situación, ya que se les evalúa 
+            por ello. En todo caso, emergencias pueden ocurrir, por lo tanto los profesores pueden 
+            cancelar con un tiempo mínimo de dos horas de anticipación sin ser penalizados de forma 
+            directa. En caso de que cancelen con más de 2 horas de anticipación, el token será 
+            devuelto de manera inmediata al estudiante, junto a un correo de aviso. En los casos de 
+            cancelaciones con menor tiempo de anticipación o casos en que el profesor no llegue en 
+            los primeros 15 minutos de clase, el profesor será penalizado y el alumno recibirá su token 
+            de vuelta además de un token de cortesía en su siguiente compra.          
+        </div>
+        
+        <h2  ng-click="to_show=9">9. Mis tokens se vencen?</h2>
+        <div ng-show="to_show==9">
+          No. Usted puede usarlos cuando desee.
+        </div>
+        
+        <h2  ng-click="to_show=10">10. ¿Cómo debo escoger a mis profesores</h2>
+        <div ng-show="to_show==10">
+            Cada profesor pone en su perfil una breve reseña sobre sí mismo. Esta reseña 
+            incluye sus intereses y campo de experticia. Usted puede ver estos detalles en la 
+            página de la lista de profesores y escoger a su profesor y luego mirar en el 
+            Wall/Calendario de profesores para ver en qué horas se ha hecho disponible y 
+            reservar alguna.          
+        </div>
+        
+        <h2  ng-click="to_show=11">11. Donde están los profesores ubicados, son todos ellos hablantes nativos de Español?</h2>
+        <div ng-show="to_show==11">
+          Todos los profesores están ubicados en Colombia y todos son hablantes nativos de español.
+        </div>
+        
+        <h2  ng-click="to_show=12">12. Tienen sus profesores algún tipo de diploma en enseñanza de idiomas?</h2>
+        <div ng-show="to_show==12">
+            Los profesores no tienen un diploma en pedagogía de español, pero tienen 
+            instrucción según el método de conversación que proponemos.          
+        </div>
+        
+        <h2  ng-click="to_show=13">13. Como funciona la diferencia de horarios?</h2>
+        <div ng-show="to_show==13">
+            <p>
+            El sitio web está configurado para mostrar la hora al usuario del lugar en el que 
+            esté. Por ejemplo si un profesor en Colombia publica una hora a la 1 PM de 
+            Colombia, el profesor verá su publicación en el Wall/Calendario de profesores a la 
+            1PM, pero si un estudiante se conecta en Inglaterra, verá esta misma publicación a 
+            las 7 PM (Hora inglesa).
+            </p>
+            <p>
+            Esto evitará cualquier malentendido sobre la hora de la clase. En todo caso, 
+            siempre tenga en mente la diferencia horario y si tiene alguna duda escriba al 
+            profesor o al administrador del sitio web.
+            </p>
+        </div>
+        
+        <h2  ng-click="to_show=14">14. ¿Cual es su política de devolución?</h2>
+        <div ng-show="to_show==14">
+            Siempre ante cancelaciones siguiendo las reglas de nuestra política de cancelación 
+            devolvemos el token automáticamente. Igualmente ante cancelaciones por parte 
+            del profesor con poco tiempo de antelación, tal y como se describe en la sección 
+            de cancelación de profesores, además de devolver el token damos un token de 
+            cortesía al estudiante. No hacemos devoluciones de dinero.          
+        </div>
+        
+        <h2  ng-click="to_show=15">15. ¿Qué ocurre si olvido que tenía una clase?</h2>
+        <div ng-show="to_show==15">
+            Si no llega y se conecta a Skype para recibir la clase 15 minutos después del
+            momento en que la misma debía comenzar, perderá el token, ya que nosotros 
+            debemos pagar al profesor por su tiempo.          
+        </div>
+        
+        <h2  ng-click="to_show=16">16. ¿Qué nivel de español debo tener para aprovechar al máximo la metodología?</h2>
+        <div ng-show="to_show==16">
+            Debido a que la metodología se basa en la conversación, se debe tener cierta 
+            capacidad y conocimiento para hablar. Por lo tanto se recomienda tener como 
+            mínimo un nivel A2 según el Marco Común Europeo de Referencia. El mejor 
+            aprovechamiento se dará con estudiantes de nivel B1 – C2.          
+        </div>
+        
+        <h2  ng-click="to_show=17">17. ¿Cuantas clases puedo reservar al mismo tiempo?</h2>
+        <div ng-show="to_show==17">
+            En un mismo día hay limitación del número de clases que puedes tener reservadas 
+            y publicadas, el número máximo de ambas es 3. Por ejemplo si tienes dos clases 
+            reservadas para un día determinado, solo podrás tener una publicación activa. De 
+            la misma forma, si tienes una clase reservada para un día en específico, solo 
+            podrás tener 2 publicaciones solicitando clase para ese mismo día.          
+        </div>
+        
+        <h2  ng-click="to_show=18">18. ¿Puedo cambiar la hora de mis clases?</h2>
+        <div ng-show="to_show==18">
+            Puedes cancelar la clase y reservar a otra hora sin ningún tipo de penalización con 
+            30 minutos de antelación.          
+        </div>
+        
+        <h2  ng-click="to_show=19">19. Si yo decido tomar la clase gratis, quedo comprometido de forma alguna?</h2>
+        <div ng-show="to_show==19">
+            No queda comprometido en forma alguna. Sólo brindamos la clase gratuita, para 
+            que el estudiante pueda conocer la metodología.          
+        </div>
+        
+        <h2  ng-click="to_show=20">20. ¿Cómo puedo ir viendo mi progreso?</h2>
+        <div ng-show="to_show==20">
+          Cada 10 clases puede solicitar su examen de nivel gratuito directamente al 
+            administrador. De esta forma, puede darse cuenta de como mejora.
+        </div>
+        
+        <h2  ng-click="to_show=21">21. ¿Ustedes proveen algún tipo de material?</h2>
+        <div ng-show="to_show==21">
+            En nuestra página de Facebook publicamos recurrentemente material que le 
+            puede servir para estudiar español por su cuenta.          
+        </div>
+        
+        <h2  ng-click="to_show=22">22. ¿Cuanto dura una clase?</h2>
+        <div ng-show="to_show==22">
+            Cada clase dura 45 minutos. Lo hacemos así, para que los restantes 15 minutos de
+            la hora puedan servir para eventualidades o problemas que surjan.          
+        </div>
+        
+        <h2  ng-click="to_show=23">23. ¿Necesito usar mi cámara durante la clase?</h2>
+        <div ng-show="to_show==23">
+            Para el profesor si es obligatorio mostrar su cámara, pero para el alumno no lo es, 
+            aunque lo recomendamos para mejorar la experiencia de la clase.          
+        </div>
+        
+        <h2  ng-click="to_show=24">24. ¿Qué ocurre si me conecto tarde a clase?</h2>
+        <div ng-show="to_show==24">
+                Tienes 15 minutos para contectarte a Skype y contactar al profesor. Después de 
+                esos 15 minutos, pierdes el token. Para evitar estos problemas recomendamos 
+                agregar al profesor a Skype con anterioridad.          
+        </div>
+        
+        <h2  ng-click="to_show=25">25. ¿Porqué el español con colombianos?</h2>
+        <div ng-show="to_show==25">
+            <p>El español en Colombia tiene fama de ser uno de los mejor hablados del mundo. </p>
+            <p>Nuestro acento es claro y no muy marcado, lo cual nos hace idóneos para los 
+            practicantes de español.</p>
+        </div>         
+    </div>    
+
+    <div ng-show="language=='en'">
+        <h1>FAQ</h1>
+        
+        <h2  ng-click="to_show=1">1. What happens if there are technical problems during the class?</h2>
+        
+        <div ng-show="to_show==1">
+            <p>
+                If a problem occurs with the sound and the quality of the call due to a weak 
+                Internet signal, faulty computer equipment, or the Skype program, you will not 
+                lose the lesson and the website will follow this plan:                
+            </p>                  
+
+            <ul>
+                <li>                
+                    If during the class the communication is broken, the teacher will try to
+                    continue the class during the remaining 15 minutes of the hour. For 
+                    instance if the class is between 10:00 and 10:45, the teacher will try to 
+                    complete the 45 minutes of class between 10:00 and 11:00. If the teacher 
+                    manage to give 45 minutes under excellent quality conditions, there won’t 
+                    be any reimbursement.                    
+                </li>
+                
+                <li>
+                    If during the hour it is not possible to continue the class in good quality:
+                    
+                    <ul>
+                        <li>
+                            Both the teacher and the student will need to inform the
+                            administrator about the time that they were able to complete. They 
+                            will be able to inform it through the feedback email that will be sent 
+                            to them after the class. After these testimonies the administrator 
+                            will send an email assuring the student that he can reserve another 
+                            time the same teacher to have the remaining minutes and the token 
+                            will be refunded after the reservation. In this new hour, the teacher 
+                            will give the student the remaining minutes that could not be given 
+                            + 10 minutes of courtesy.
+                            
+                            <ul>
+                                <li>
+                                    For instance if in a class the teacher was able just to give 25
+                                    minutes of class, in the next promotional class he will give 
+                                    the student 30 minutes of class. (20 minutes of the previous 
+                                    class that could not be completed and 10 minutes of 
+                                    courtesy).                                    
+                                </li>    
+                            <ul>    
+                        </li>    
+                    </ul>    
+                </li>    
+            </ul>
+                    
+            <p>Some recommendations to optimize audio and video quality:</p>
+            
+            <ul>
+                <li>1. Make sure Skype is updated.  Find the latest version of Skype in skype.com.</li>
+                <li>
+                    2. Wear headphones. If you hear echoes in the audio, it is because the 
+                    other party’s speakers are too loud. Wear headphones and the 
+                    echoes will subside instantly.
+                </li>
+                <li>
+                    3. Adjust the light.  Ample frontal lighting can mean the difference 
+                    between talking to a real person and talking to a grainy silhouette.
+                </li>
+                <li>
+                    4. Minimize ambient noise.  Try to create a quiet, classroom-like 
+                    environment when you are having a lesson.
+                </li>
+                <li>
+                    5. Close other programs during the lesson.  Overloading your Internet 
+                    capacity with open programs could worsen audio and video quality. 
+                </li>
+                <li>
+                    6. Use cable internet if possible instead of Wi-Fi.  Cable internet will 
+                    give you a much smoother, more consistent experience.
+                </li>
+            </ul>    
+        </div>    
+        
+        <h2  ng-click="to_show=2">2. How can I pay for the lessons?</h2>
+        <div ng-show="to_show==2">
+            We offer lesson packages of 1, 5 or 10 classes. We are accepting credit cards, debit 
+            cards and paypal through our payment partner 2checkout.com         
+        </div>
+        
+        <h2  ng-click="to_show=3">3. Whats the subject in the classes   and the methodology?</h2>
+        <div ng-show="to_show==3">
+            <p>
+                The student can choose any subject for the class. We promote mainly the practice 
+                of conversation, but the student is free to ask the teacher to practice any specific 
+                subject.
+            </p>
+            <p>
+                As stated in the How it works? Section, we focus on creating a fluent structured 
+                conversation making the student to use all of its abilities in order to express 100% 
+                in Spanish.
+            </p>
+        </div>
+        
+        <h2  ng-click="to_show=4">4. Can I prepare DELE examinations with Spanishpro.net?</h2>
+        <div ng-show="to_show==4">
+            Off course you can. With Spanishpro.net you will mainly improve 2 abilities: Oral 
+            comprehension and oral production.          
+        </div>
+        
+        <h2  ng-click="to_show=5">5.  Who are the teachers?</h2>
+        <div ng-show="to_show==5">
+            The teachers are young students of all types of disciplines. You can find historians,
+            engineers and artists in our website. We believe that having interdisciplinary 
+            teachers makes our classes suitable and interesting for everyone. The teachers do 
+            not have a degree in pedagogy, but they have the instruction necessary to apply 
+            our conversational method.          
+        </div>         
+
+        <h2  ng-click="to_show=6">6. How does the rotation process works?</h2>
+        <div ng-show="to_show==6">
+            We promote our students to improve by speaking with all kinds of teachers from 
+            all kinds of disciplines. That is why we offer at the end of each month a raffle of 5 
+            tokens between all the students that had class during the previous month with at 
+            least 4 different teachers.          
+        </div>
+        
+        <h2  ng-click="to_show=7">7. Can I cancel a lesson?</h2>
+        <div ng-show="to_show==7">
+            <p>
+            We are proud to say that we have the most flexible cancellation policy in the 
+            industry. 
+            </p>
+            <p>
+            The student can cancel at any time before the class with no cost. The only rule is 
+            not to cancel with less than 30 minutes in advance. If you cancel with more than 30 
+            minutes in advance, you token will be automatically returned, but if you cancel 
+            with less time, your token will not be returned.
+            </p>
+        </div>
+        
+        <h2  ng-click="to_show=8">8. What happens if my teacher cancels to me?</h2>
+        <div ng-show="to_show==8">
+            In general the teachers must no cancel any reservation, because they are evaluated on it. 
+            Anyway, emergencies happen, so the teachers are allowed to (but should not) cancel with 
+            a minimum time of 2 hours without being directly punished. In the case where they cancel 
+            with more than 2 hours in advance, the token will be automatically returned to the 
+            student along with an email telling the student about the cancelation. If the cancelation is 
+            made with less time in advance or if the teacher simply does not show up during the first 
+            15 minutes of the class, the teacher will be penalized and the student will receive his token 
+            back, plus a free token in his next purchase.          
+        </div>
+        
+        <h2  ng-click="to_show=9">9. Do my tokens expire?</h2>
+        <div ng-show="to_show==9">
+          No. You may use them whenever you like.
+        </div>
+        
+        <h2  ng-click="to_show=10">10. How should I select my teachers?</h2>
+        <div ng-show="to_show==10">
+            Each teacher includes in his profile a short description of himself. This description 
+            includes his interests and field of expertise. You can see those details in the “List of 
+            teachers” page and then go to the Wall/Calendar of students and take a look to 
+            which hours the teacher posted and reserve one.          
+        </div>
+        
+        <h2  ng-click="to_show=11">11. Where are the teachers located, are they all native Spanish speakers?</h2>
+        <div ng-show="to_show==11">
+          All the teachers are from Colombia and they are native Spanish speakers.
+        </div>
+        
+        <h2  ng-click="to_show=12">12. Do your teachers have any degree in language education?</h2>
+        <div ng-show="to_show==12">
+            The teachers do not have a degree in pedagogy, but they have the instruction 
+            necessary to apply our conversational method.          
+        </div>
+        
+        <h2  ng-click="to_show=13">13. How does the time difference works?</h2>
+        <div ng-show="to_show==13">
+            <p>
+            The website is configured to show to the user the time of the place in which he is.
+            So for instance if a teacher from Colombia posts and hour at 1 PM Colombian time, 
+            the teacher will see his publication as 1 PM in the Wall/Calendar of teachers, but a 
+            student logging on from England will see this publication as 7 PM (English time).
+            </p>
+            <p>
+            This will avoid any misunderstandings between times. However, keep in mind the 
+            time difference and if you have any doubts, just contact the teacher or the website 
+            manager.
+            </p>
+        </div>
+        
+        <h2  ng-click="to_show=14">14. What is your refund policy?</h2>
+        <div ng-show="to_show==14">
+            We will always automatically return the tokens for cancellations under our policies. 
+            Moreover, for cancelations of the teachers with a short notice we will not only give 
+            the token back, but give a courtesy token in the client´s next purchase.          
+        </div>
+        
+        <h2  ng-click="to_show=15">15. What happens if I forget I had a lesson?</h2>
+        <div ng-show="to_show==15">
+            If you don’t arrive and log in to skype 15 minutes after the start of the class you 
+            will lose the token, cause we will have to pay the teacher for his time.          
+        </div>
+        
+        <h2  ng-click="to_show=16">16. What level of Spanish should I have in order to take the most out of this methodology?</h2>
+        <div ng-show="to_show==16">
+            Because the metodology is based on conversation, you must have certain skills and
+            knowledge in order to be able to speak. Therefore, it is highly recommended to 
+            already have a level of A2 according the Common European Framework of 
+            Reference. The best results happen with students of students between the level B1 
+            – C2.          
+        </div>
+        
+        <h2  ng-click="to_show=17">17. How many classes can I reserve at a time?</h2>
+        <div ng-show="to_show==17">
+            In one day is no limitation on the number of classes that can be reserved
+            and published , the maximum number of both is 3. For example if you have two classes
+            reserved for a certain day , you can only have one active publication. of
+            Similarly, if you have a class reserved for a specific day only
+            You can have 2 publications seeking class that day.          
+        </div>
+        
+        <h2  ng-click="to_show=18">18. Can I reschedule my classes?</h2>
+        <div ng-show="to_show==18">
+            You can cancel the class and reserve another one at another time without any 
+            penalty if you do it with at least 30 minutes in advance.          
+        </div>
+        
+        <h2  ng-click="to_show=19">19. If I decide to take the first free class, am I committed to you in any way?</h2>
+        <div ng-show="to_show==19">
+            You are not attached to us in any way. We just give the free class so that every 
+            student can get to know our methodology.          
+        </div>
+        
+        <h2  ng-click="to_show=20">20. How do you track my progress?</h2>
+        <div ng-show="to_show==20">
+            Every 10 classes you can ask for your free exam directly to the manager of the site. 
+            Through this way you can see your improvement.          
+        </div>         
+        
+        <h2  ng-click="to_show=21">21. Do you provide any additional material?</h2>
+        <div ng-show="to_show==21">
+            In our page in Facebook we post currently valuable links and information which 
+            you can use to improve your Spanish by yourself.          
+        </div>
+        
+        <h2  ng-click="to_show=22">22. How long does a class takes?</h2>
+        <div ng-show="to_show==22">
+            Every class is 45 minutes long. We do it that way, because we want to save the 
+            remaining 15 minutes of the hour to technical problems or eventualities.          
+        </div>
+        
+        <h2  ng-click="to_show=23">23. Do I need to use my webcam?</h2>
+        <div ng-show="to_show==23">
+            For the teachers it  is mandatory to show their camera, but for the students its 
+            voluntary. However we recommend the use of it in order to improve the class 
+            experience.          
+        </div>
+        
+        <h2  ng-click="to_show=24">24. What happens if I log on to a class a bit late?</h2>
+        <div ng-show="to_show==24">
+            You have 15 minutes to log in to Skype and contact the teacher. After 15 minutes 
+            you lose the token. To avoid this problems we recommend adding your teacher to 
+            Skype in advance.          
+        </div>
+        
+        <h2  ng-click="to_show=25">25. Why learn Spanish with colombians?</h2>
+        <div ng-show="to_show==25">
+            Spanish in Colombia has the reputation of being one of the best spoken in the 
+            world. Our accent is clear and not to strong which makes us ideal to practice 
+            Spanish with.          
+        </div>         
+    </div>
+</div>
