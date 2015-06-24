@@ -65,7 +65,7 @@
                 
           })
           .run(function ($rootScope, $http) {
-                alert(navigator.userAgent);
+                
                 $rootScope.currentPicture = 0;
                 
                 if (!$rootScope.config) {                    
@@ -566,7 +566,6 @@
                                     return true;
                                 }
                           
-                                
             }])
             .controller('CancelClassController', ['$http', function($http) {
                     this.resumes =[];

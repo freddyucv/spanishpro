@@ -69,14 +69,6 @@ function checkHour($this, date) {
     return null;
 }
 
-function getHourLabel(hour, minute){
-        if (hour < 12) {
-            return (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) +  " .A.M.";
-        }else{
-            return ((hour - 12) < 10 ? "0" + (hour - 12) : (hour - 12))  + ":" + (minute < 10 ? "0" + minute : minute) + " .P.M.";
-        }    
-}
-
 function checkLimitReserveBookTime($this, $rootScope, date){
     var selectDate = date.date();
     var today = moment();
@@ -381,9 +373,7 @@ function loadCalendar($this, $rootScope, filter, data) {
         
         if (currentDate == date.date() && c.status == "book" && filter == $this.filter) {
             
-            var hour = date.hour();
-            var minute = date.minute();
-            var hourLabel = getHourLabel(hour, minute);
+            var hourLabel = date.format("hh:mm a");
             
             var user = {};
             user.classId = c["_id"];
