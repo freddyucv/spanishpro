@@ -785,8 +785,9 @@ function sendResponse(okRes, failRes, classs, user, student,opts){
 }
 
 
-function getReserveEmailSubject(){
-    return "=?ISO-8859-1?B?" + new Buffer("Reservación de clase / Class reservation").toString('base64') + "?=";
+function getReserveEmailSubject(){           
+    //return "=?ISO-8859-1?B?" + new Buffer("Reservación de clase / Class reservation").toString('base64') + "=?=";
+    return "Reservacion de clase / Class reservation";
 }
 
 function sendEmailReserveStudentToStudent(classs, student, teacher){
@@ -933,7 +934,7 @@ function classDone(classs){
 
 function sendFeedbackEmailStudent(user, classs){
     email.send({                                                                                                 
-                subject:"Retroalimentaci&oacute;n  / Feedback",
+                subject:"Retroalimentacion  / Feedback",
                 to: user.email,
                 data: {
                    name: user.name,
