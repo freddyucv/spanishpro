@@ -312,7 +312,7 @@
                                                         sessionStorage.currentUser = JSON.stringify($rootScope.currentUser);
                                                         
                                                         updateUser(this, $http, $rootScope.currentUser, Upload);
-                                                        this.edit = !this.edit;
+                                                        
                                                     }    
                                                 }else{                                                
                                                     this.edit = !this.edit;

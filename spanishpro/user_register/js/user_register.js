@@ -289,6 +289,7 @@ function sendData($this, $http, user){
         $http(httpReq).success(function(data, status, headers, config) {
                                                                     if (status == 200) {
                                                                         alert("Actualizacion exitosa / Succesfully updated");
+                                                                        $this.edit = !$this.edit;
                                                                     }else{
                                                                         alert(data);
                                                                     }
