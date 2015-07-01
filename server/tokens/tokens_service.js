@@ -226,7 +226,7 @@ function addBillToUser(user, bill, cb, ecb){
     }
     
     email.send({                                                                                                 
-                 subject:"Confirmación de compra / Purchase confirmation",
+                 subject:"Confirmacion de compra / Purchase confirmation",
                  to: user.email,
                  data: {
                     name: user.name,

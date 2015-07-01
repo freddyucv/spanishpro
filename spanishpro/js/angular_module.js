@@ -424,11 +424,14 @@
                 weekday[5] = "Viernes/Friday";
                 weekday[6] = "Sabado/Saturday";                                   
                 
-                var d = moment(date).date();
-                date = moment(date).add($rootScope.config.reserveTime, 'm');                
-                date.add(1, "h");
-                date.set("m", 0);
-                date.set("date", d);
+                if ($rootScope.config) {
+                    var d = moment(date).date();
+                    
+                    date = moment(date).add($rootScope.config.reserveTime, 'm');                
+                    date.add(1, "h");
+                    date.set("m", 0);
+                    date.set("date", d);
+                }
                 
                 this.currentDate = {
                         d: date,
@@ -667,7 +670,9 @@
                                                     }
                                                     
                                                     this.resumes = [];
-                                                    for (var value of this.resumesAux.values()) {                                                     
+                                                    var values = this.resumesAux.values();
+                                                    for (var i = 0; i < values.length; i++) {
+                                                        var value = values[i]; 
                                                         this.resumes.push(value);
                                                     }
                                                     

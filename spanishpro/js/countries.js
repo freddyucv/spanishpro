@@ -159,7 +159,8 @@ var countries = [
                     {iso: "ZA",country_name: "Sudafrica"}
                 ];
 
-module.exports = {countries: countries};
+    module.exports = {countries: countries};
+
 
 function loadCities(country, citiesSelect, $http, $this, countryCode) {
     

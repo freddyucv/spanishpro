@@ -4,19 +4,23 @@
     display: inline-block;
     left:50%;
     transform: translate(-50%, 0);
+    -webkit-transform:translate(-50%, 0);
+    -ms-transform:translate(-50%, 0);
     position: absolute;
-    
-    
+        
 }
 
 body{
     background-color: #e6e7e9;
+    width: 80%;
 }
 
 .dialog{
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
     
     background-color: #ccc;
     
@@ -40,6 +44,8 @@ body{
     top:50%;
     left:50%;
     transform:translate(-50%, -70%);
+    -ms-transform:translate(-50%, -70%);
+    -webkit-transform:translate(-50%, -70%);
     min-width: 600px;
     
 }
@@ -196,6 +202,9 @@ input.ng-valid {
 [button]{
     color: white;
     background:linear-gradient(#ff3b3c, #7d0506);
+    background: -webkit-gradient(linear, center top, center bottom, from(#ff3b3c), to(#7d0506));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ff3b3c', endColorStr='#7d0506', GradientType=0)";
+    
     min-width: 70px;
     min-height: 25px;
     box-sizing: border-box;
@@ -210,6 +219,8 @@ input.ng-valid {
     top:50%;
     left: 0%;
     transform: translate(0, -50%);
+    -webkit-transform:translate(0, -50%);
+    -ms-transform:translate(0, -50%);
     position: absolute;
     width: 100%;
     text-align: center;
@@ -233,6 +244,8 @@ input.ng-valid {
     color: white;
     font-size: 12px;
     background: linear-gradient(#5f5f5f, black);
+    background: -webkit-gradient(linear, center top, center bottom, from(#5f5f5f), to(black));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr='#5f5f5f', endColorStr='#fff', GradientType=0)";
     
     font-weight: bold;
 }
@@ -240,6 +253,8 @@ input.ng-valid {
 .second_button a{
     top: 50%;
     transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
     text-decoration: none;
     color: white;
 }
@@ -347,6 +362,7 @@ input.ng-valid {
 [about_us] [container] .combo_container{    
     width: 100%;
     position: relative;
+     
 }
 .combo_container span{
     width: 30%;
@@ -369,6 +385,8 @@ input.ng-valid {
     width: 60%;
     left:50%;
     transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
 }
 
 [about_us] .about_us_image{
@@ -377,7 +395,9 @@ input.ng-valid {
     top: 50%;
     
     position: absolute;
-    transform: translate(   0%, -50%   );    
+    transform: translate(   0%, -50%   );
+    -ms-transform: translate(   0%, -50%   );
+    -webkit-transform: translate(   0%, -50%   );  
     width: 30%;
 }
 
@@ -440,6 +460,8 @@ input.ng-valid {
     left: 50%;
     position: absolute;
     transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
     
     width: 100%;
     text-align: center;
@@ -472,25 +494,33 @@ input.ng-valid {
 
 [time]  [clock_cointainer] [clock] [t12]{
     left: 50%;
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
 }
 
 [time]  [clock_cointainer] [clock] [t9]{
     left: 0px;
     top: 50%;
-    transform: translate(0, -50%)  
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -wekit-transform: translate(0, -50%)  
 }
 
 [time]  [clock_cointainer] [clock] [t6]{
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -100%)   
+    transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -webkit-transform: translate(-50%, -100%);
 }
 
 [time]  [clock_cointainer] [clock] [t3]{
     top: 50%;
     left: 100%;
-    transform: translate(-100%, -50%) 
+    transform: translate(-100%, -50%);
+    -ms-transform: translate(-100%, -50%);
+    -webkit-transform: translate(-100%, -50%);
     
 }
 
@@ -498,6 +528,9 @@ input.ng-valid {
     width: 100%;
     height: 50px;
     background: linear-gradient(#5f5f5f, black);
+    background: -webkit-gradient(linear, center top, center bottom, from(#5f5f5f), to(black));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr='#5f5f5f', endColorStr='#black', GradientType=0)";
+    
     color: white;
     font-size: 14px;
     position: relative;
@@ -509,6 +542,8 @@ input.ng-valid {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     position: absolute;
 
     white-space: nowrap;
@@ -547,7 +582,9 @@ input.ng-valid {
 
     position: relative;
     left:50%;
-    transform: translate(-50%, 0); 
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0); 
     
 }
 
@@ -563,6 +600,8 @@ input.ng-valid {
     position: relative;
     left:50%;
     transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
     
 }
 
@@ -596,6 +635,8 @@ input.ng-valid {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
     
    
 }
@@ -642,6 +683,8 @@ h3{
     position: relative;
     left:50%;
     transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
     
 }
 
@@ -724,6 +767,9 @@ td,th{
 
 th, tr[special]{
     background: linear-gradient(#ff3b3c, #7d0506);
+    background: -webkit-gradient(linear, center top, center bottom, from(#ff3b3c), to(#7d0506));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ff3b3c', endColorStr='#7d0506', GradientType=0)";
+    
     font-weight: bold;
     color: white;
 }
@@ -827,11 +873,17 @@ th, tr[special]{
 
 .search_selected{
     background: linear-gradient(#ff3b3c, #7d0506);
+    background: -webkit-gradient(linear, center top, center bottom, from(#ff3b3c), to(#7d0506));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ff3b3c', endColorStr='#7d0506', GradientType=0)";
+    
     color: white;
 }
 
 .search_selected_calendar{
     background: linear-gradient(#ff3b3c, #7d0506);
+    background: -webkit-gradient(linear, center top, center bottom, from(#ff3b3c), to(#7d0506));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ff3b3c', endColorStr='#7d0506', GradientType=0)";
+    
 }
 
 [history_tokens] .panel{
@@ -860,6 +912,8 @@ th, tr[special]{
     
     left:50%;
     transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
     
     margin-top: 2%;
 }
@@ -1098,6 +1152,8 @@ th, tr[special]{
     top:10%;
     left:50%;
     transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
 }
 
 [user] [marco]{
@@ -1125,6 +1181,8 @@ th, tr[special]{
     color: white;
     background-color: red;
     transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
     z-index:1;
 }
 
@@ -1141,6 +1199,8 @@ th, tr[special]{
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     display: inline-block;
     width: 80%;
     text-align: center;
@@ -1227,6 +1287,8 @@ th, tr[special]{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 
 [wall_calendar] [filter]{
