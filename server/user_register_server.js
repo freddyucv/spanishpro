@@ -2,6 +2,15 @@ var express = require('express');
 var router = express.Router();
 var util_server = require('./util/server_util.js');
 var service = require('./register_server_service.js');
+var aws = require('aws-sdk');
+
+var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
+var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
+var S3_BUCKET = process.env.S3_BUCKET
+
+/*var AWS_ACCESS_KEY = "AKIAJHAFWILC5QGI762Q";
+var AWS_SECRET_KEY = "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";
+var S3_BUCKET = "spanishpro";*/
 
 router.post('/users',function(req, res) {
   console.log("Recibiendo peticion para registrar usuario " + JSON.stringify(req.body));
@@ -94,6 +103,33 @@ router.post('/users/:idUser',function(req, res) {
                                     }
                     
                   });
+});
+
+router.get('/sign_s3', function(req, res){
+    aws.config.update({accessKeyId: AWS_ACCESS_KEY, secretAccessKey: AWS_SECRET_KEY});
+    
+    var s3 = new aws.S3();
+    var s3_params = {
+        Bucket: S3_BUCKET,
+        Key: req.query.file_name,
+        Expires: 60,
+        ContentType: req.query.file_type,
+        ACL: 'public-read'
+    };
+    
+    s3.getSignedUrl('putObject', s3_params, function(err, data){
+        if(err){
+            console.log(err);
+        }
+        else{
+            var return_data = {
+                signed_request: data,
+                url: 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+req.query.file_name
+            };
+            res.write(JSON.stringify(return_data));
+            res.end();
+        }
+    });
 });
 
 /*function emailRegisterError(res) {

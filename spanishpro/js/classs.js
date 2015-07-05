@@ -340,7 +340,7 @@ function countReserveAndBook($this, c){
     }
     
     limitDate++;
-    $this.limit.set(key, limitDate);
+    $this.limit.put(key, limitDate);
 }
 
 function loadCalendar($this, $rootScope, filter, data) {
@@ -348,14 +348,14 @@ function loadCalendar($this, $rootScope, filter, data) {
                                             
     if (filter == "My") {                                            
         $this.Mydata = data;
-        $this.limit = new Map();
+        $this.limit = new CustomMap();
     }else{                                        
         $this.data = data;
         $this.dataFilter = $this.filter;
     }
                             
     if (filter == $this.filter){                
-        var calendar = new Map();
+        var calendar = new CustomMap();
         $this.calendar = [];
     }
     
@@ -408,7 +408,7 @@ function loadCalendar($this, $rootScope, filter, data) {
                 hour.users = []
                 hour.hourLabel = hourLabel;
                 
-                calendar.set(hourLabel, $this.calendar.length);
+                calendar.put(hourLabel, $this.calendar.length);
                 $this.calendar.push(hour);
             }
             

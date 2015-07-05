@@ -11,7 +11,7 @@ setInterval(function(){
                 finishClasss();      
             },
             
-            60 * 60 * 1000);
+            60 * 60 * 1000 * 24);
 
 module.exports = {
                     /**

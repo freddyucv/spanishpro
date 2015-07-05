@@ -245,28 +245,64 @@ function register($this, $http) {
     }
 }                               
 
+function uploadFile(s3, $this, $http, user, Upload){
+    /*Upload.upload({
+            url: s3.signed_request,
+            fields: {
+                'username': user.name
+            },
+            file: $this.files[0],
+            method: "PUT",
+            headers: {'x-amz-acl': 'public-read'}
+        }).progress(function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            $this.log = 'progress: ' + progressPercentage + '% ' +
+                        evt.config.file.name;
+        }).success(function (data, status, headers, config) {
+            $this.log = 'cargada/uploaded';
+            
+            user.picture = s3.url;
+            sessionStorage.currentUser = JSON.stringify(user);
+            sendData($this, $http, user);
+            
+        });*/
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", s3.signed_request);
+        xhr.setRequestHeader('x-amz-acl', 'public-read');
+        xhr.onload = function() {
+            $this.log = 'cargada/uploaded';
+            
+            user.picture = s3.url;
+            sessionStorage.currentUser = JSON.stringify(user);
+            sendData($this, $http, user);
+        };
+        xhr.onerror = function() {
+            alert("Could not upload file.");
+        };
+        xhr.send($this.files[0]);
+}
 
 function updateUser($this, $http, user, Upload) {
     
     if ($this.files) {
-        Upload.upload({
-                    url: 'uploadFile',
-                    fields: {
-                        'username': user.name
-                    },
-                    file: $this.files[0]
-                }).progress(function (evt) {
-                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    $this.log = 'progress: ' + progressPercentage + '% ' +
-                                evt.config.file.name;
-                }).success(function (data, status, headers, config) {
-                    $this.log = 'cargada/uploaded';
-                    
-                    user.picture = data.substring(data.indexOf("/") + 1);
-                    sessionStorage.currentUser = JSON.stringify(user);
-                    sendData($this, $http, user);
-                    
-                });
+        var extStart = $this.files[0].name.indexOf(".") + 1;
+        var ext = $this.files[0].name.substring(extStart);
+        
+       var httpReq = {
+         method: 'GET',
+         url: "sign_s3?file_name=" + user["_id"] + "." + ext + "&file_type=" + $this.files[0].type,
+        };
+        
+        $http(httpReq).success(function(s3, status, headers, config) {
+            alert(JSON.stringify(s3));
+                                                                    uploadFile(s3, $this, $http, user, Upload);   
+                                                                 })
+                .error(function(data, status, headers, config) {
+                                                                    if (status != 0) {
+                                                                        alert(atatus + " " + data);
+                                                                    }
+                                                                }); 
     }else{
         sendData($this, $http, user);
     }

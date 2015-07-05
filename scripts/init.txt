@@ -10,4 +10,8 @@ db.pages.insert({page: "Politicas y privacidad", content: "Politicas y privacida
 db.pages.insert({page: "FAQ", content: "FAQ"});
 
 
+db.users.createIndex( { "login": 1 } );
+db.classs.createIndex( { "student": 1 } );
+db.classs.createIndex( { "teacher": 1 } );
+
 
