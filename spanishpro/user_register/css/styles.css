@@ -116,8 +116,7 @@
 }
 
 .imgPerfil	 {
-        width: 10%;
-        
+        width: 100%;        
         float: right;
         cursor: pointer;
 }

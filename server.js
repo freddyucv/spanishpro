@@ -63,7 +63,7 @@ app.get('/*', function(req, res){
 });
 
 process.on('uncaughtException', function (err) {
-  console.log("ERROR " + err);
+  console.log("ERROR " + err.stack);
 })
 
 var port = process.env.PORT || 1234;

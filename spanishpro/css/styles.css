@@ -33,7 +33,7 @@ body{
     position: absolute;
     
     box-shadow: 10px 10px 5px #888888;
-    z-index: 1;
+    z-index: 2;
     
     color: black;
     
@@ -43,7 +43,7 @@ body{
 .techer_dialog{
     top:50%;
     left:50%;
-    transform:translate(-50%, -70%);
+    transform:translate(-50%, -50%);
     -ms-transform:translate(-50%, -70%);
     -webkit-transform:translate(-50%, -70%);
     min-width: 600px;
@@ -100,7 +100,6 @@ input.ng-valid {
 
 [img_logo]{
     position: absolute;
-    z-index: 1;
     opacity: 1;
 
     top: 4%;
@@ -735,7 +734,8 @@ h3{
 }
 
 [buy_tokens_dialog]{
-    width: 500px;
+    max-width: 500px;
+    width: 120%;
     top:140px;
 }
 
@@ -926,11 +926,17 @@ th, tr[special]{
 [perfil_page] [picture]{
     display: inline-block;
     position: absolute;
-    left: 5%;
     top:30px;
     width: 20%;
-    
 }
+
+[perfil_page] [data]{
+     display: inline-block;    
+    margin-left: 25%;
+    top:30px;
+    width: 58%;
+}
+
 
 [perfil_page] label{
     word-break: break-all;    
@@ -942,21 +948,18 @@ th, tr[special]{
 }
 
 [perfil_page] [panel]{
-    display: inline-block;
     margin-left: 5%;
-    
     position: relative;
-    width: 68%;
+    width: 120%;
     
-    float: right;
 }
 
-[perfil_page] [panel] [edit]{
-    position: absolute;
-    top:0px;
-    
-    right: 0px;
-    
+[perfil_page] [edit_Img] {
+    top:30px;
+    right: 5%;
+    width: 10%;
+    display: inline-block;
+    position:absolute;
 }
 
 [perfil_page] [panel] div{
