@@ -304,10 +304,10 @@
                                  }
                                  
                 this.changeStatus = function(){
-                                                                  
+                                                 alert(this.edit);                 
                                                 if (this.edit) {
                                                     var valid = fieldsValid($("[perfil_page]"));
-
+                                                    alert("valid " + valid);                 
                                                     if (valid) {                                                    
                                                         sessionStorage.currentUser = JSON.stringify($rootScope.currentUser);
                                                         
