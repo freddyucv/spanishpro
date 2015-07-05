@@ -295,7 +295,7 @@ function updateUser($this, $http, user, Upload) {
         };
         
         $http(httpReq).success(function(s3, status, headers, config) {
-            alert(JSON.stringify(s3));
+            
                                                                     uploadFile(s3, $this, $http, user, Upload);   
                                                                  })
                 .error(function(data, status, headers, config) {
