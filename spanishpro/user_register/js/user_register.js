@@ -290,6 +290,8 @@ function uploadFile(s3, $this, $http, user, Upload){
             sendData($this, $http, user);
         };
         xhr.onerror = function() {
+            stopWaiting("[panel] [data]");
+
             alert("Could not upload file.");
         };
         xhr.send($this.files[0]);
