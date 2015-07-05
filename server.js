@@ -63,6 +63,7 @@ app.get('/*', function(req, res){
 });
 
 process.on('uncaughtException', function (err) {
+  console.log("ERROR " + err);
   console.log("ERROR " + err.stack);
 })
 
