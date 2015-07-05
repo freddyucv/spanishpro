@@ -284,7 +284,7 @@ function uploadFile(s3, $this, $http, user, Upload){
 }
 
 function updateUser($this, $http, user, Upload) {
-    alert("$this.files " + $this.files); 
+    
     if ($this.files) {
         var extStart = $this.files[0].name.indexOf(".") + 1;
         var ext = $this.files[0].name.substring(extStart);
