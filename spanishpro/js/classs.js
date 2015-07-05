@@ -10,14 +10,18 @@ function loadClasss($http, $this, $rootScope) {
     
     $http(httpReq).success(function(data, status, headers, config) {
                                                                 $this.loadClasss(data);
-                                                                stopWaiting("[history]");
+                                                                stopWaiting("[history]", hideHistory());
                                                              })
             .error(function(data, status, headers, config) {
-                                                                stopWaiting("[history]");
+                                                                stopWaiting("[history]", hideHistory);
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    
                                                             }); 
+}
+
+function hideHistory(){
+    $("[history]").hide();
 }
 
 function checkHourToBook($this) {

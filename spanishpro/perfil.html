@@ -113,7 +113,7 @@
 		</div>	
 	</div>
 	
-	<div>
+	<div >
 		<h2>Clases</h2>
 		
 		<div>
@@ -127,13 +127,20 @@
 			</select>	
 		</div>
 		
-		<table style="margin-top: 5%;width: 100%" history>
+		<table style="margin-top: 5%;width: 100%" >
 			<tr>
 				<th>Fecha/Date</th>
 				<th>Estado/Status</th>
 				<th>{{currentUser.type == 'Student' ? 'Profesor/Teacher' : 'Estudiante/Students'}}</th>
 				<th></th>	
 			</tr>
+			
+			<tr>
+				<td colspan="4" history>
+					
+				</td>
+	
+			</tr>			
 			
 			<tr ng-repeat="c in pc.classs  | filter:statusSearch |filter:pc.isFilter">
 				<td>{{pc.dateFormat(c.date)}}</td>

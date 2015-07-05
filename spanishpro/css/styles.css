@@ -1386,8 +1386,9 @@ th, tr[special]{
     text-align: center;
 }
 
-.history{
-    position: relative;    
+[history]{
+    position: relative;
+    height: 100px;
 }
 
 .waiting{
