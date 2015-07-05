@@ -1,4 +1,7 @@
 function loadClasss($http, $this, $rootScope) {
+    
+    startWaiting("[history]");
+    
     var httpReq = {
      method: 'GET',
      url: 'classs/' + $rootScope.currentUser["_id"],
@@ -7,8 +10,10 @@ function loadClasss($http, $this, $rootScope) {
     
     $http(httpReq).success(function(data, status, headers, config) {
                                                                 $this.loadClasss(data);
+                                                                stopWaiting("[history]");
                                                              })
             .error(function(data, status, headers, config) {
+                                                                stopWaiting("[history]");
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    
@@ -149,6 +154,7 @@ function book($this, $http, $rootScope){
         
         data.date = moment(date).utcOffset(0);
     
+        startWaiting("[book]");
         var httpReq = {
             method: 'POST',
             url: 'class/',
@@ -156,10 +162,12 @@ function book($this, $http, $rootScope){
         };
         
         $http(httpReq).success(function(data, status, headers, config) {
+                                                                    stopWaiting("[book]");
                                                                     alert("Publicada/Published");
                                                                     $this.waiting = false;
                                                                  })
                 .error(function(data, status, headers, config) {
+                                                                    stopWaiting("[book]");
                                                                     if (status != 0) {
                                                                         alert(data);
                                                                     }    
@@ -201,7 +209,7 @@ function checkLimitForDay($this, $rootScope){
     return true;
 }
 
-function reserve($this, $http, $rootScope) {    
+function reserve($this, $http, $rootScope, target) {    
     
     var date = getDateToReserve($this);
     
@@ -231,8 +239,9 @@ function reserve($this, $http, $rootScope) {
                 data.idClassBookSameTime= classsSameHour["_id"];
             }
             
-            data.userTime = moment().utcOffset();    
+            data.userTime = moment().utcOffset();
             
+            startWaiting(target);
             var httpReq = {
                 method: 'PUT',
                 url: $rootScope.currentUser["_id"] + '/class/reserve/' + $this.maybeReserve,
@@ -259,11 +268,13 @@ function reserve($this, $http, $rootScope) {
                                                                         
                                                                         reloadUser($rootScope, $http);
                                                                         $this.getCalendar();
+                                                                        stopWaiting(target);
                                                                         this.waiting = false;
                                                                          
                                                                         
                                                                      })
                     .error(function(data, status, headers, config) {
+                                                                        stopWaiting(target);
                                                                         if (status != 0) {
                                                                             alert(data);
                                                                         }    

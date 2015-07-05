@@ -38,7 +38,10 @@ function login($this, $http, $rootScope, $state){
     
     var valid = fieldsValid($("[login]"));
      
-    if (valid) {    
+    if (valid) {
+        
+        startWaiting("[login]");
+        
         var httpReq = {
             method: 'PUT',
             url: 'users/login',
@@ -52,6 +55,8 @@ function login($this, $http, $rootScope, $state){
         };
         
         $http(httpReq).success(function(data, status, headers, config) {
+            
+                                                                    stopWaiting("[login]");
                                                                     if (status == 200) {
                                                                         closeDialog("[login]");
                                                                         sessionStorage.currentUser = JSON.stringify(data);
@@ -64,11 +69,15 @@ function login($this, $http, $rootScope, $state){
                                                                         alert(data);
                                                                     }
     
+                                                                    
                                                                  })
                 .error(function(data, status, headers, config) {
+                                                                    stopWaiting("[login]");
                                                                     if (status != 0) {
                                                                         alert(data);
-                                                                    }    
+                                                                    }
+                                                                    
+                                                                    
                                                                 });
     }            
 }
@@ -215,6 +224,7 @@ function register($this, $http) {
     var valid = fieldsValid($("[user_register]"));
 
     if (valid) {
+        startWaiting("[user_register]");
         $this.user.tokens= 0;
         $this.user.type = $("[user_register] [user_type]").val();
         $this.user.time =  moment().utcOffset();
@@ -229,6 +239,7 @@ function register($this, $http) {
         };
         
         $http(httpReq).success(function(data, status, headers, config) {
+                                                                    stopWaiting("[user_register]");
                                                                     if (status == 200) {
                                                                         alert("Usuario registrado exitosamente, se le envio un correo para continuar con el proceso / User was registered succesfully. An email was sent to you in order to continue with the process");
                                                                         closeResgisterUserDialog();
@@ -238,6 +249,7 @@ function register($this, $http) {
    
                                                                  })
                 .error(function(data, status, headers, config) {
+                                                                    stopWaiting("[user_register]");
                                                                     if (status != 0) {
                                                                         alert(data);
                                                                     }    
@@ -285,9 +297,12 @@ function uploadFile(s3, $this, $http, user, Upload){
 
 function updateUser($this, $http, user, Upload) {
     
+    startWaiting("[panel] [data]");
+    
     if ($this.files) {
         var extStart = $this.files[0].name.indexOf(".") + 1;
         var ext = $this.files[0].name.substring(extStart);
+        
         
        var httpReq = {
          method: 'GET',
@@ -296,9 +311,11 @@ function updateUser($this, $http, user, Upload) {
         
         $http(httpReq).success(function(s3, status, headers, config) {
             
-                                                                    uploadFile(s3, $this, $http, user, Upload);   
+                                                                    uploadFile(s3, $this, $http, user, Upload);
+                                                                    
                                                                  })
                 .error(function(data, status, headers, config) {
+                                                                    stopWaiting("[panel] [data]");
                                                                     if (status != 0) {
                                                                         alert(atatus + " " + data);
                                                                     }
@@ -323,6 +340,7 @@ function sendData($this, $http, user){
         };
         
         $http(httpReq).success(function(data, status, headers, config) {
+                                                                    stopWaiting("[panel] [data]");
                                                                     if (status == 200) {
                                                                         alert("Actualizacion exitosa / Succesfully updated");
                                                                         $this.edit = !$this.edit;
@@ -332,6 +350,7 @@ function sendData($this, $http, user){
    
                                                                  })
                 .error(function(data, status, headers, config) {
+                                                                    stopWaiting("[panel] [data]");
                                                                     if (status != 0) {
                                                                         alert(data);
                                                                     }

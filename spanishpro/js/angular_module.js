@@ -499,16 +499,16 @@
                                             
                 }
                 
-                this.reserve = function(){
+                this.reserve = function(target){
                                     if (!this.waiting) {
                                         if($rootScope.currentUser &&
                                            $rootScope.currentUser.type != this.filter &&                                        
                                            this.filter != 'My'){
                                             
                                              if ($rootScope.currentUser.type == "Student" && $rootScope.currentUser.tokens> 0) {
-                                                reserve(this, $http, $rootScope);
+                                                reserve(this, $http, $rootScope, target);
                                              }else if ($rootScope.currentUser.type == "Teacher") {
-                                                reserve(this, $http, $rootScope);
+                                                reserve(this, $http, $rootScope, target);
                                              }else if ($rootScope.currentUser.tokens == 0){
                                                 alert("No tiene suficientes tokens / You dont have tokens");
                                              }

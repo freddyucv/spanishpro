@@ -124,7 +124,7 @@
                         ng-mouseover="wcc.maybeReserve = user.classId"
                         ng-Mouseleave="wcc.maybeReserve = -1"
                         ng-class="{search_selected_calendar: (wcc.maybeReserve == user.classId) && currentUser && currentUser.type != wcc.filter  && wcc.filter != 'My'}"
-                        ng-click= "wcc.reserve()"
+                        ng-click= "wcc.reserve(this)"
                         >
                             <img marco src="images/fotos-prof.png"/>
                             <img picture src="{{user.picture ? user.picture : 'images/default_perfil.png'}}"/>
