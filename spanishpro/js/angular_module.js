@@ -506,9 +506,9 @@
                                            this.filter != 'My'){
                                             
                                              if ($rootScope.currentUser.type == "Student" && $rootScope.currentUser.tokens> 0) {
-                                                reserve(this, $http, $rootScope, target);
+                                                reserve(this, $http, $rootScope, "#" + this.maybeReserve);
                                              }else if ($rootScope.currentUser.type == "Teacher") {
-                                                reserve(this, $http, $rootScope, target);
+                                                reserve(this, $http, $rootScope, "#" + this.maybeReserve);
                                              }else if ($rootScope.currentUser.tokens == 0){
                                                 alert("No tiene suficientes tokens / You dont have tokens");
                                              }

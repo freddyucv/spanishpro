@@ -321,6 +321,7 @@ function getCalendar($this, $http, $rootScope, calendarFilter){
         filter.userId = $rootScope.currentUser["_id"];
     }
     
+    startWaiting(".cork");
     var httpReq = {
         method: 'POST',
         url: 'calendar/',
@@ -335,8 +336,10 @@ function getCalendar($this, $http, $rootScope, calendarFilter){
                                                                 }
                                                                 
                                                                 $this.loadCalendar(data.calendarData, calendarFilter);
+                                                                stopWaiting(".cork");
                                                              })
             .error(function(data, status, headers, config) {
+                                                                stopWaiting(".cork");
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    

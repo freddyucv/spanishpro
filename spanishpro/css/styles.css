@@ -815,6 +815,7 @@ th, tr[special]{
     background-image: url("../images/corcho.JPG");
     border: 1px solid black;
     position: relative;
+    height: 200px;
 }
 
 
@@ -979,7 +980,7 @@ th, tr[special]{
 [list_container]{
     width: 100%;
     display: inline-block;
-    
+    min-height: 100px;
 }
 
 [teacher_list_page] [teacher_item]{
@@ -1102,6 +1103,7 @@ th, tr[special]{
     padding: 2%;
     box-sizing: border-box;
     height:auto;
+    min-height: 100px;
 }
 
 [wall_calendar] [book]{
@@ -1171,7 +1173,7 @@ th, tr[special]{
 [user] [name]{
     position: absolute;
     bottom:8%;
-
+    left:0%;
     z-index: 1;
     font-weight: bold;
     font-size: 12px;
@@ -1396,7 +1398,9 @@ th, tr[special]{
     z-index:1;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%);    
+    transform: translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);    
     width:70px;
     height:70px;
     font-weight:bold;

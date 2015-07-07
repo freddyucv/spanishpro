@@ -57,9 +57,8 @@ function buy($this, $rootScope) {
     
     if($this.accept){    
         var valid = fieldsValid($("[buy_tokens_dialog]"));
-        
+    
         if (valid) {
-            
             if ($this.toPay > 0) {
                 var totalTokens = $this.toBuy;
                    

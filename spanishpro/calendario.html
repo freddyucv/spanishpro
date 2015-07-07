@@ -120,7 +120,7 @@
                     </div>
                     
                     <div users>
-                        <span user ng-repeat= "user in hour.users"
+                        <span id="{{wcc.maybeReserve}}" user ng-repeat= "user in hour.users"
                         ng-mouseover="wcc.maybeReserve = user.classId"
                         ng-Mouseleave="wcc.maybeReserve = -1"
                         ng-class="{search_selected_calendar: (wcc.maybeReserve == user.classId) && currentUser && currentUser.type != wcc.filter  && wcc.filter != 'My'}"
