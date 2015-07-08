@@ -83,6 +83,12 @@
                     <th>Precio Total($)</th>
                 </tr>
                 
+                <tr>
+                    <td id="validate_token_waiting" colspan="3" history>
+                        
+                    </td>    
+                </tr>
+                
                 <tbody ng-repeat="t in vtc.studensTokens">
                     <tr >
                         <td style="position: relative">
@@ -135,6 +141,12 @@
                     <th>Clases Canceladas</th>
                     <th ng-show="ccc.filter.typeUser == 'Teacher'">Faltas Graves</th>
                     <th ng-show="ccc.filter.typeUser == 'Student'">Sin retorno de tokens</th>                    
+                </tr>
+                
+                <tr>
+                    <td id="cancel_class_waiting" colspan="4" history>
+                        
+                    </td>    
                 </tr>
                 
                 <tbody ng-repeat="resume in ccc.resumes | filter:ccc.filter">               
@@ -191,6 +203,12 @@
                     <th>Pagar</th>
                 </tr>
                 
+                <tr>
+                    <td id="payment_class_waiting" colspan="4" history>
+                        
+                    </td>    
+                </tr>
+                
                 <tbody ng-repeat="classs in tpc.classsCancel">
                     <tr >
                         <td>
@@ -241,6 +259,12 @@
                     <th>Tipo de Usuario</th>
                     <th>Clases Reservadas</th>
                     <th>Clases Terminadas</th>
+                </tr>
+                
+                <tr>
+                    <td id="reserved_done_class_waiting" colspan="4" history>
+                        
+                    </td>    
                 </tr>
                 
                 <tbody ng-repeat="resume in rdcc.resumes | filter:rdcc.filter">               

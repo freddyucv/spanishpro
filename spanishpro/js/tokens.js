@@ -57,9 +57,10 @@ function buy($this, $rootScope) {
     
     if($this.accept){    
         var valid = fieldsValid($("[buy_tokens_dialog]"));
-    
+        
         if (valid) {
             if ($this.toPay > 0) {
+                startWaiting("[buy_tokens_dialog]");
                 var totalTokens = $this.toBuy;
                    
                    var clientElements = "<input type='hidden' name='card_holder_name' value='" + $rootScope.currentUser.name + "' >" +
@@ -115,6 +116,7 @@ function addProduct(quantity, price, name, index) {
 
 
 function initValidateTokensController($http, $this){
+    startWaiting("#validate_token_waiting");
     
     var httpReq = {
         method: 'GET',
@@ -122,9 +124,16 @@ function initValidateTokensController($http, $this){
     }
     
     $http(httpReq).success(function(data, status, headers, config) {
-                                                                $this.load(data);
+                                                                 $this.load(data);
+                                                                 stopWaiting("#validate_token_waiting", function(){
+                                                                        $("#validate_token_waiting").hide();
+                                                                    });                                                                
                                                              })
             .error(function(data, status, headers, config) {
+                                                                stopWaiting("#validate_token_waiting", function(){
+                                                                       $("#validate_token_waiting").hide();
+                                                                   });
+                                                                
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    
@@ -153,7 +162,6 @@ function validateTokens($this, $http){
        toDelete.push(billsDelete);
     }
        
-
     var httpReq = {
         method: 'POST',
         url: 'validate_tokens',
@@ -175,8 +183,10 @@ function validateTokens($this, $http){
                                                                  }
                                                                  
                                                                  $this.load ($this.studensTokens);
+                                                                 
                                                              })
             .error(function(data, status, headers, config) {
+                                                                
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    

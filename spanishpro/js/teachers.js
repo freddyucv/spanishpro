@@ -1,4 +1,7 @@
 function initTeacherController($http, $this){
+   
+   
+   
    var httpReq = {
         method: 'GET',
         url: 'teachers'

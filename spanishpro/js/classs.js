@@ -501,7 +501,8 @@ function getMinutesFromNow(classsMoment) {
 }
 
 function loadCancelClass($this, $http ) {
-    
+   startWaiting("#cancel_class_waiting");
+   
    var httpReq = {
         method: 'GET',
         url: 'classs_canceled'
@@ -510,8 +511,15 @@ function loadCancelClass($this, $http ) {
     $http(httpReq).success(function(data, status, headers, config) {
         
                                                                 $this.loadCancelClass(data);
+                                                                 stopWaiting("#cancel_class_waiting", function(){
+                                                                        $("#cancel_class_waiting").hide();
+                                                                    });                                                                
                                                              })
             .error(function(data, status, headers, config) {
+                                                                stopWaiting("#cancel_class_waiting", function(){
+                                                                       $("#cancel_class_waiting").hide();
+                                                                   });
+                                                                 
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    
@@ -519,7 +527,8 @@ function loadCancelClass($this, $http ) {
 }
 
 function loadReservedDoneClass($this, $http ) {
-    
+   startWaiting("#reserved_done_class_waiting");
+   
    var httpReq = {
         method: 'GET',
         url: 'classs_reserved_done'
@@ -528,8 +537,18 @@ function loadReservedDoneClass($this, $http ) {
     $http(httpReq).success(function(data, status, headers, config) {
         
                                                                 $this.loadReservedDoneClass(data);
+                                                                
+                                                                stopWaiting("#reserved_done_class_waiting", function(){
+                                                                    $("#reserved_done_class_waiting").hide();
+                                                                });
+                                                                
+                                                                
                                                              })
             .error(function(data, status, headers, config) {
+                                                                stopWaiting("#reserved_done_class_waiting", function(){
+                                                                    $("#reserved_done_class_waiting").hide();
+                                                                });
+                
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    
@@ -537,7 +556,8 @@ function loadReservedDoneClass($this, $http ) {
 }
 
 function initTeachersPayments($http, $this){
-        
+    startWaiting("#payment_class_waiting");
+    
     var httpReq = {
         method: 'GET',
         url: 'teachers_payment'
@@ -545,8 +565,16 @@ function initTeachersPayments($http, $this){
     
     $http(httpReq).success(function(data, status, headers, config) {
                                                                 $this.loadTeacherPayment(data);
+                                                                
+                                                                 stopWaiting("#payment_class_waiting", function(){
+                                                                        $("#payment_class_waiting").hide();
+                                                                    });                                                                
                                                              })
             .error(function(data, status, headers, config) {
+                                                                stopWaiting("#payment_class_waiting", function(){
+                                                                        $("#payment_class_waiting").hide();
+                                                                    });
+                                                                 
                                                                 if (status != 0) {
                                                                     alert(data);
                                                                 }    

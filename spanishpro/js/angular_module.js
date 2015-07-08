@@ -55,10 +55,6 @@
                       data:{
                             title: "¿Como Funciona? / How it Work?"
                       }
-                    })
-                    .state('static_pages', {
-                      url: '/static_pages',                       
-                      templateUrl: 'static_pages.html'
                     });
                     
                     
@@ -70,10 +66,6 @@
                 
                 if (!$rootScope.config) {                    
                     loadConfig($rootScope, $http);
-                }
-
-                if (!$rootScope.staticPagesConfig){
-                    loadStaticPage($rootScope, $http);    
                 }
                 
                 if (!$rootScope.combos) {
@@ -578,17 +570,12 @@
                     loadCancelClass(this, $http);
                     
                     this.loadCancelClass = function(cancelClass){
+                        
                                                 this.resumesAux = [];
                                                 
                                                 
-                                                if (cancelClass) {
+                                                if (cancelClass && cancelClass.length > 0) {
                                                     
-                                                    
-                                                    for (var i = 0; i < cancelClass.length; i++){
-                                                        console.log(cancelClass[i].cancelBy);
-                                                        
-                                                    }
-                                                                                                       
                                                    var oldCancelBy = cancelClass[0].cancelBy;
                                                    var resume = this.loadCanceledClass(cancelClass[0]);
                                                                                                         
@@ -663,19 +650,17 @@
                                                 console.log("reservedDoneClass.length " + reservedDoneClass.length);
                                                 
                                                 if (reservedDoneClass && reservedDoneClass.length > 0) {
-                                                    this.resumesAux = new Map();                                                                                                                                                              
+                                                    this.resumesAux = new CustomMap();                                                                                                                                                              
                                                                                                         
                                                     for (var i = 0; i < reservedDoneClass.length; i++){                                                        
                                                         this.createResume(reservedDoneClass[i]);
                                                     }
                                                     
                                                     this.resumes = [];
-                                                    var values = this.resumesAux.values();
-                                                    for (var i = 0; i < values.length; i++) {
-                                                        var value = values[i]; 
-                                                        this.resumes.push(value);
-                                                    }
-                                                    
+                                                    this.resumesAux.forEach(function(value){                                                                    
+                                                                    this.resumes.push(value);
+                                                            }.bind(this)   
+                                                    );                                                    
                                                 }
                                                                                                
                     }
@@ -694,7 +679,7 @@
                     
                     this.createResume = function(loadReservedDoneClass){
 
-                                                var exitsStundet = this.resumesAux.has(loadReservedDoneClass.student);
+                                                var exitsStundet = this.resumesAux.containsKey(loadReservedDoneClass.student);
                                                 console.log("exitsStundet " + exitsStundet);
                                                 
                                                 if (!exitsStundet) {
@@ -706,7 +691,7 @@
                                                                 typeUser: 'Student'                                                               
                                                              };
                                                              
-                                                    this.resumesAux.set(loadReservedDoneClass.student, resume);
+                                                    this.resumesAux.put(loadReservedDoneClass.student, resume);
                                                     this.count(resume, loadReservedDoneClass);
                                                 }else{
                                                    var resume = this.resumesAux.get(loadReservedDoneClass.student);
@@ -714,7 +699,7 @@
                                                    resume.classs.push(loadReservedDoneClass);
                                                 }
 
-                                                var exitsTeacher = this.resumesAux.has(loadReservedDoneClass.teacher);
+                                                var exitsTeacher = this.resumesAux.containsKey(loadReservedDoneClass.teacher);
                                                 console.log("exitsTeacher " + exitsTeacher);
                                                 
                                                 if (!exitsTeacher) {
@@ -726,7 +711,7 @@
                                                                 typeUser: 'Teacher'                                                                
                                                              };
                                                              
-                                                    this.resumesAux.set(loadReservedDoneClass.teacher, resume);
+                                                    this.resumesAux.put(loadReservedDoneClass.teacher, resume);
                                                     this.count(resume, loadReservedDoneClass);
                                                 }else{
                                                     var resume = this.resumesAux.get(loadReservedDoneClass.teacher);

@@ -5,11 +5,6 @@ db.config.insert(
                     email:{service: 'Gmail',auth: {user: 'freddy0309@gmail.com',pass: 'leones2010'}}}
                 );
                 
-db.pages.insert({page: "Terminos y Condiciones", content: "Terminos y Condiciones"});
-db.pages.insert({page: "Politicas y privacidad", content: "Politicas y privacidad"});
-db.pages.insert({page: "FAQ", content: "FAQ"});
-
-
 db.users.createIndex( { "login": 1 } );
 db.classs.createIndex( { "student": 1 } );
 db.classs.createIndex( { "teacher": 1 } );

@@ -9,7 +9,6 @@ var config = require('./server/config/config_server.js');
 var tokens = require('./server/tokens/tokens_server.js');
 var teachers = require('./server/teachers/teachers_server.js');
 var classs = require('./server/classs/classs_server.js');
-var pages = require('./server/pages/pages_server.js');
 var contact = require('./server/contact/contact_server.js');
 
 app.use(bodyParser.urlencoded({
@@ -37,7 +36,6 @@ app.use('/spanishpro', config);
 app.use('/spanishpro', tokens);
 app.use('/spanishpro', teachers);
 app.use('/spanishpro', classs);
-app.use('/spanishpro', pages);
 app.use('/spanishpro', contact);
 
 
