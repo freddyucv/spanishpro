@@ -184,7 +184,8 @@ input.ng-valid {
 }
 
 [cancel_button]{
-    height: 5%;
+    min-height: 5%;
+    height: auto;
     width: 5%;
     position: relative;
 }
@@ -1404,6 +1405,7 @@ th, tr[special]{
     -ms-transform:translate(-50%, -50%);    
     width:70px;
     height:70px;
+    
     font-weight:bold;
     background-color:white;
     display: inline-block;
@@ -1414,7 +1416,11 @@ th, tr[special]{
     width:100%;
     height:70%;
 }
-    
+
+[class_history]{
+    position: relative;    
+}
+
 /*[cork] [classs]{
    display: inline-block;
    background-color: red;

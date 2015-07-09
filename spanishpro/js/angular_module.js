@@ -330,8 +330,7 @@
                                 
                 this.cancel = function (classs){
                                     if (!this.waiting) {
-                                        cancelClass(classs, $rootScope, $http
-                                                    );
+                                        cancelClass(classs, $rootScope, $http);
                                     }    
                                 }
                                 

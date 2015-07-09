@@ -475,17 +475,20 @@ function cancelClass(classs, $rootScope, $http){
     if (r) {    
         console.log("Cancelar " + JSON.stringify(data));
         
+        startWaiting("[class_history]");
         var httpReq = {
              method: 'PUT',
              url: 'classs/' + classs["_id"] + "/cancel",
              data: data
          };
          
-         $http(httpReq).success(function(data, status, headers, config) {
+        $http(httpReq).success(function(data, status, headers, config) {
                                                                      classs.status = "canceled";
                                                                      reloadUser($rootScope, $http);
+                                                                     stopWaiting("[class_history]");
                                                                   })
                  .error(function(data, status, headers, config) {
+                                                                    stopWaiting("[class_history]");
                                                                     if (status != 0) {
                                                                          alert(data);
                                                                     }     

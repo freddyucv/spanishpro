@@ -4,13 +4,17 @@ var util_server = require('./util/server_util.js');
 var service = require('./register_server_service.js');
 var aws = require('aws-sdk');
 
-var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
+/*var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
 var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
-var S3_BUCKET = process.env.S3_BUCKET;
+var S3_BUCKET = process.env.S3_BUCKET;*/
 
 /*var AWS_ACCESS_KEY = "AKIAJHAFWILC5QGI762Q";
 var AWS_SECRET_KEY = "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";
 var S3_BUCKET = "spanishpro";*/
+
+var AWS_ACCESS_KEY = "AKIAIQ3X5IXQU4UX2FHA";
+var AWS_SECRET_KEY = "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";
+var S3_BUCKET = "spanishpronet";
 
 router.post('/users',function(req, res) {
   console.log("Recibiendo peticion para registrar usuario " + JSON.stringify(req.body));

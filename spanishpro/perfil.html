@@ -127,7 +127,7 @@
 			</select>	
 		</div>
 		
-		<table style="margin-top: 5%;width: 100%" >
+		<table style="margin-top: 5%;width: 100%" class_history>
 			<tr>
 				<th>Fecha/Date</th>
 				<th>Estado/Status</th>
@@ -147,7 +147,7 @@
 				<td>{{pc.getStatus(c.status)}}</td>
 				<td>{{currentUser.type == 'Student' ? c.teacherName : c.studentName}}</td>
 				<td>
-					<div ng-show="c.status == 'reserved' || c.status == 'book'" cancel_button button  ng-click="pc.cancel(c)">
+					<div  ng-show="c.status == 'reserved' || c.status == 'book'" cancel_button button  ng-click="pc.cancel(c)">
 						<span>Cancelar</span>
 					</div>						
 				</td>			
