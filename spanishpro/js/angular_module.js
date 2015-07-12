@@ -2,7 +2,7 @@
     
     function () {
         
-        angular.module('spanishpro', ['ui.router', 'ngFileUpload','ui.date'])
+        angular.module('spanishpro', ['ui.router', 'ngFileUpload'])
           .config(function ($stateProvider, $urlRouterProvider) {
                 
                 $urlRouterProvider.otherwise("home");
