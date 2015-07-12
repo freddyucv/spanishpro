@@ -4,7 +4,8 @@ function initTeacherController($http, $this){
    
    var httpReq = {
         method: 'GET',
-        url: 'teachers'
+        url: 'teachers',
+        contentType:"application/json; charset=utf-8"
     }
     startWaiting("[teacher_list_page] [list_container]");
     
