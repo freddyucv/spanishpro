@@ -111,8 +111,10 @@
 
 [perfil_page] label {
         display: inline-block;
-        width: 200px;
         font-size: 13px;
+}
+[perfil_page] .small_label {
+        width: 200px;
 }
 
 .imgPerfil	 {

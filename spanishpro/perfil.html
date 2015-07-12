@@ -28,60 +28,60 @@
 			
 			<div>			
 				<div>
-					<label class="key">Nombre / Name: </label>
-					<label ng-hide="pc.edit">{{currentUser.name}}</label> 
+					<label class="key small_label">Nombre / Name: </label>
+					<label class="small_label" ng-hide="pc.edit">{{currentUser.name}}</label> 
 					<input ng-model="currentUser.name" ng-show="pc.edit" required></input>
 					<img src="user_register/images/x_red.png" error/>
 					<label error_text error></label>			
 				</div>
 			   
 				<div>
-					<label class="key">Correo / Email: </label>
+					<label class="key small_label">Correo / Email: </label>
 					<input ng-model="currentUser.email" ng-show="pc.edit" required></input>
 					<img src="user_register/images/x_red.png" error/>
 					<label error_text error></label>					
-					<label ng-hide="pc.edit">{{currentUser.email}}</label> 
+					<label class="small_label" ng-hide="pc.edit">{{currentUser.email}}</label> 
 				</div>
 			   
 				<div>
-					<label class="key">Skype: </label>
-					<label ng-hide="pc.edit">{{currentUser.skype}}</label> 
+					<label class="key small_label">Skype: </label>
+					<label class="small_label" ng-hide="pc.edit">{{currentUser.skype}}</label> 
 					<input ng-model="currentUser.skype" ng-show="pc.edit" required></input>
 					<img src="user_register/images/x_red.png" error/>
 					<label error_text error></label>			
 				</div>
 	
 				<div>
-				   <label class="key">Pa&iacute;s / Country: </label>
+				   <label class="key small_label">Pa&iacute;s / Country: </label>
 				   <select required ng-model="currentUser.country" ng-change="pc.loadCities()" ng-show="pc.edit" country_perfil>
 					<option value="{{country.iso}}" ng-repeat="country in pc.countries"  ng-selected="currentUser.country == country.iso">{{country.country_name}}</option> 
 					
 				   </select>
 					<img src="user_register/images/x_red.png" error/>
 					<label error_text error></label>				   
-				   <label ng-hide="pc.edit">{{currentUser.country}}</label> 
+				   <label class="small_label" ng-hide="pc.edit">{{currentUser.country}}</label> 
 				</div>
 			   
 				<div>
-				   <label class="key">Ciudad/ City: </label>
+				   <label class="key small_label">Ciudad/ City: </label>
 				   <select required cities_perfil ng-model="currentUser.city" ng-show="pc.edit">
 					<option value="{{city}}" ng-repeat="city in pc.cities"  ng-selected="currentUser.city == city">{{city}}</option> 
 				   </select>
 					<img src="user_register/images/x_red.png" error/>
 					<label error_text error></label>				   
-				   <label ng-hide="pc.edit">{{currentUser.city}}</label> 
+				   <label class="small_label" ng-hide="pc.edit">{{currentUser.city}}</label> 
 				</div>
 			   
 				<div>
-				   <label class="key">Ocupaci&oacute;n / Occupation: </label>
+				   <label class="key small_label">Ocupaci&oacute;n / Occupation: </label>
 				   <input ng-model="currentUser.occupation" ng-show="pc.edit"></input>
-				   <label ng-hide="pc.edit">{{currentUser.occupation}}</label> 
+				   <label class="small_label" ng-hide="pc.edit">{{currentUser.occupation}}</label> 
 				</div>
 			   
 				<div>
-				   <label class="key">Fecha de Nacimiento / Day of birth: </label>
+				   <label class="key small_label">Fecha de Nacimiento / Day of birth: </label>
 				   <input ui-date="pc.dateOptions"  ng-model="currentUser.dayofBirth" ng-show="pc.edit" required/>
-				   <label ng-hide="pc.edit">{{currentUser.dayofBirth}}</label> 
+				   <label class="small_label" ng-hide="pc.edit">{{currentUser.dayofBirth}}</label> 
 				</div>
 			   
 				<div>
