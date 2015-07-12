@@ -159,8 +159,7 @@ var countries = [
                     {iso: "ZA",country_name: "Sudafrica"}
                 ];
 
-    module.exports = {countries: countries};
-
+//module.exports = {countries: countries};
 
 function loadCities(country, citiesSelect, $http, $this, countryCode) {
     
@@ -204,31 +203,5 @@ function loadCities(country, citiesSelect, $http, $this, countryCode) {
                                                                     if (status != 0) {
                                                                         alert(data);
                                                                     }    
-                                                                });
-                
-                
-                
-                
-    /*var xmlhttp = new XMLHttpRequest();
-    var path = "http://api.geonames.org/search?country=" + countryCode + "&maxRows=10&username=" + applicationAccount + "&type=json&cities=cities1000";
-    xmlhttp.open("GET", path, true);
-    xmlhttp.send();
-    
-    return new Promise(function(resolve){
-                                    xmlhttp.onreadystatechange=function()
-                                        {
-                                            if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                                                var aux = JSON.parse(xmlhttp.responseText).geonames;
-                                                var cities = [];
-                                                
-                                                for (var i = 0; i < aux.length; i++){
-                                                    var cityName = aux[i].toponymName;
-                                                    cities.push(cityName);
-                                                }
-                                                
-                                                $("[" + citiesSelect + "]").removeAttr("disabled", "false");
-                                                $this.loadCitiesCombo(cities);
-                                            }
-                                        }    
-                                });    */                             
+                                                                });                  
 }

@@ -3,7 +3,8 @@ var email = require('./util/email_util.js');
 var config = require('./util/config.js');
 ObjectID = require('mongodb').ObjectID;
 var countries = require('../spanishpro/js/countries.js');
-                               
+
+console.log("Countries " + JSON.stringify(countries.countries));                           
 notifyNewUsers();
 setInterval(function(){
                 notifyNewUsers();      
