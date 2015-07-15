@@ -24,7 +24,7 @@
                     <th>Costo / Price</th>
                 </tr>
                 
-                <tbody ng-repeat="bill in tc.bills">
+                <tbody ng-repeat="bill in currentUser.bills">
                     <tr>
                         <td>
                              <img src="images/{{bill.showDetail ? 'up' : 'down'}}.png" style="width:10px" ng-click="bill.showDetail = !bill.showDetail" collapse/>

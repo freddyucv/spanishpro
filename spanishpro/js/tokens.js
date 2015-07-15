@@ -16,17 +16,7 @@ function initTokensController($http, $rootScope, $this) {
         $rootScope.currentUser.tokens = 0;
         $rootScope.currentUser.bills = [];
     }
-    
-    if ($rootScope.currentUser.bills) {
-        $rootScope.currentUser.bills =  $rootScope.currentUser.bills.sort(function(a, b){
-                                                                                                return  new Date(b.date).getTime() - new Date(a.date).getTime();
-                                                                                            });
-    }
-    
-    if (!$rootScope.currentUser.tokens) {
-        $rootScope.currentUser.tokens = 0;
-    }
-    
+
     if (!$rootScope.combos) {
         loadCombos($http, $rootScope, $this, function(data){init($http, $rootScope, $this)});
     }

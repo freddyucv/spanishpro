@@ -8,6 +8,7 @@
         $("[contact_admin_dialog]").hide();
         
         $("[error]").hide();
+        
     }()
 )
 
@@ -427,9 +428,13 @@ function reloadUser($rootScope, $http) {
                                                                              $rootScope.currentUser.bills = [];
                                                                          }else{
                                                                             if ($rootScope.currentUser.bills) {
-                                                                                $rootScope.currentUser.bills =  $rootScope.currentUser.bills.reverse(); 
+                                                                                $rootScope.currentUser.bills =  $rootScope.currentUser.bills.sort(
+                                                                                                                    function(a, b){
+                                                                                                                                          return  new Date(b.date).getTime() - new Date(a.date).getTime();
+                                                                                                                                      });
                                                                             }
                                                                             
+                                                                          
                                                                          }
                                                                  })
                 .error(function(data, status, headers, config) {

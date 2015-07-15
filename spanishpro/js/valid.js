@@ -26,6 +26,7 @@ function fieldsValid($this) {
 }
 
 function showValidationError ($this, message){
+        
         var parent = $($this).parent().get(0);
         $(parent).children("[error]").show();
           $(parent).children("[error_text]").text(message);

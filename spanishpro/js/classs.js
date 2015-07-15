@@ -278,6 +278,7 @@ function reserve($this, $http, $rootScope, target) {
                                                                         
                                                                      })
                     .error(function(data, status, headers, config) {
+                        
                                                                         stopWaiting(target);
                                                                         if (status != 0) {
                                                                             alert(data);

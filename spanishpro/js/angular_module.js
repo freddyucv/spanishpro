@@ -48,6 +48,7 @@
                     .state('tokens', {
                       url: '/tokens',                      
                       templateUrl: 'tokens.html'
+                      
                     })
                     .state('admin', {
                       url: '/admin',                       
@@ -158,7 +159,7 @@
                                   }                                      
             }])
             .controller('TokenController', ['$http', '$rootScope', '$state', function($http, $rootScope, $state) {
-                this.bills = $rootScope.currentUser.bills;
+                //this.bills = $rootScope.currentUser.bills;
                 
                 if ($rootScope.currentUser) {
                     initTokensController($http, $rootScope, this);
@@ -481,10 +482,10 @@
 
                 this.loadNotFirsClass = function(notFirstClassData){
                     
-                                            this.notFirstClass = new Map();
+                                            this.notFirstClass = new CustomMap();
                                             
                                             for (var i = 0; i < notFirstClassData.length; i++){
-                                                this.notFirstClass.set(notFirstClassData[i]["_id"], true);
+                                                this.notFirstClass.put(notFirstClassData[i]["_id"], true);
                                             }
                                             
                                             
