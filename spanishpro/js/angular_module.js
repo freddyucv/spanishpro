@@ -1,7 +1,7 @@
 (
     
     function () {
-        alert(window.location.href);
+        
         angular.module('spanishpro', ['ui.router', 'ngFileUpload'])
           .config(function ($stateProvider, $urlRouterProvider) {
                 
@@ -17,7 +17,6 @@
                     .state('reset_password', {                             
                       url: '/reset_password',
                       onEnter: function(){                        
-                        alert();
                         showResetPasswordDialog("Setear password / Set Password");
                       }
                     })
