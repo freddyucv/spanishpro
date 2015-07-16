@@ -184,7 +184,7 @@ function resetPassword($this, $http) {
          var valid = fieldsValid($("[reset_password]"));
      
         if (valid) {
-           
+            startWaiting("[reset_password]");
             var queryStart = window.location.href.indexOf("?");
             var userId = window.location.href.substring(queryStart).split("=")[1];
        
@@ -201,15 +201,18 @@ function resetPassword($this, $http) {
             };
             
             $http(httpReq).success(function(data, status, headers, config) {
+                                                                        stopWaiting("[reset_password]");
                                                                         if (status == 200) {
                                                                             alert("Clave asignada correctamente / Password was set succesfully");
                                                                             closeDialog("[reset_password]");
+                                                                            window.location.href = "index.html";
                                                                         }else{
                                                                             alert(data);
                                                                         }
        
                                                                      })
                     .error(function(data, status, headers, config) {
+                                                                        stopWaiting("[reset_password]");
                                                                         if (status != 0) {
                                                                             alert(data);
                                                                         }    

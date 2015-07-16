@@ -4,7 +4,6 @@
         
         angular.module('spanishpro', ['ui.router', 'ngFileUpload'])
           .config(function ($stateProvider, $urlRouterProvider) {
-                
                 $urlRouterProvider.otherwise("home");
                 
                 $stateProvider.state('home', {
