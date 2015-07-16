@@ -1,7 +1,7 @@
 (
     
     function () {
-        alert(window.location.href.indexOf("/reset_password"))
+        alert(window.location.href);
         angular.module('spanishpro', ['ui.router', 'ngFileUpload'])
           .config(function ($stateProvider, $urlRouterProvider) {
                 
