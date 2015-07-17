@@ -56,7 +56,12 @@ app.post('/spanishpro/uploadFile', function(req, res){
    }
 });
 
-app.get('/*', function(req, res){
+app.get('/spanishpro', function(req, res){  
+  res.redirect("spanishpro/index.html");
+});
+
+
+app.get('/*', function(req, res){  
   res.sendFile(__dirname + req.path);
 });
 
