@@ -185,10 +185,8 @@ function resetPassword($this, $http) {
      
         if (valid) {
             startWaiting("[reset_password]");
-            var queryStart = window.location.search.indexOf("?");
-            alert("queryStart " + queryStart);
+            var queryStart = window.location.search.indexOf("?");            
             var userId = window.location.search.substring(queryStart).split("=")[1];
-            alert("userId " + userId);
             
             var httpReq = {
                 method: 'PUT',
