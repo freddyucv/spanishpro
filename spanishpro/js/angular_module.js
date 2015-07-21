@@ -63,9 +63,8 @@
           .run(function ($rootScope, $http) {
                 
                 var ua = window.navigator.userAgent;                
-                var msie = ua.indexOf("MSIE ") || ua.indexOf("rv:11.0") || ua.indexOf("rv 11.0");
     
-                if (msie > 0){
+                if (ua.indexOf("MSIE ") > 0 || ua.indexOf("rv:11.0") > 0  || ua.indexOf("rv 11.0") > 0 ){
                     alert("Aconsejamos abrir esta página web con los navegadores: Google Chrome, Mozilla Firefox o Safari  /  We recommend to open this web site with the browsers: Google Chrome, Mozilla Firefox or Safari");
                 }
                 
