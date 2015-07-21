@@ -63,6 +63,7 @@
           .run(function ($rootScope, $http) {
                 
                 var ua = window.navigator.userAgent;
+                alert(ua);
                 var msie = ua.indexOf("MSIE ");
     
                 if (msie > 0){
