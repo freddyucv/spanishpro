@@ -205,9 +205,7 @@
             <br>
             <p>Revisa las clases ofrecidas por nuestros profesores  y escoge la hora que desees o solicita la hora que tú quieras y recibirás clase</p>
             <br>
-            <p>Flexibilidad y disponibilidad sin comparación</p>
-            
-
+            <p>Flexibilidad y disponibilidad sin comparación</p>            
         </div>
      
         <div  ui-view ng-show="currentUser.type == 'Admin' || $state.current.name != 'home'" >
@@ -223,8 +221,15 @@
                     <a href="Privacy_policy.html" target="_blank" footer_menu >Politicas de Privacidad</a>
                     <a href="" footer_menu onclick="showDialog('[contact_admin_dialog]')">Contacto</a>
                     <a href="FAQ.html" footer_menu target="_blank">FAQ</a>                    
-                </span>    
+                </span>
+                
             </div>
+            
+            <span browser>
+                <img src="images/firefox.jpg" style="margin-right: 5px"/>
+                <img src="images/safari.jpg" style="margin-right: 5px"/>
+                <img src="images/chrome.jpg"/>    
+            </span>
             
             <div ng-show="spc.showDialog" class="dialog" static_page_dialog>
                 <div close ng-click="spc.showDialog = false">X</div>

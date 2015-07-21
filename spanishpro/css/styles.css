@@ -1421,6 +1421,19 @@ th, tr[special]{
     position: relative;    
 }
 
+[browser]{
+    right:0%;
+    display:inline-block;
+    position: absolute;
+    width: 15%;
+    bottom: 0%;
+
+}
+
+[browser] img{
+    width: 15%;
+}
+
 /*[cork] [classs]{
    display: inline-block;
    background-color: red;
