@@ -396,7 +396,6 @@ function cancelSuccess(classs, opts, oldStatus){
                     userId: classs.teacher,
                     successCallback:  function(teacher){
                                             if (oldStatus == "reserved"){
-
                                                 if (classs.cancelBy.equals(classs.teacher)) {
 
                                                     if (classs.fatalWarnning){
@@ -422,6 +421,8 @@ function cancelSuccess(classs, opts, oldStatus){
                     successCallback:  function(student){
                                             
                                             if (oldStatus == "reserved"){
+                                                console.log("classs.cancelBy " + classs.cancelBy);
+                                                console.log("classs.cancelBy " + classs.student);
                                                 
                                                 if (classs.cancelBy.equals(classs.student)) {
                                                     if (opts.reverseTokens){
@@ -448,15 +449,17 @@ function cancelSuccess(classs, opts, oldStatus){
             classs.owner == "Teacher" &&
             classs.cancelBy.equals(classs.student)) {
             
+            var newClass = JSON.parse(JSON.stringify(classs));
+            
             //Publicando nuevamente la hora del profesor
-            classs["_id"] = null;
-            classs.status = "book";
-            classs.student = null;
-            classs.studentName = null;
-            classs.studentPicture = null;
+            newClass["_id"] = null;
+            newClass.status = "book";
+            newClass.student = null;
+            newClass.studentName = null;
+            newClass.studentPicture = null;
             
             dao.save({
-                    object: classs,
+                    object: newClass,
                     collectionName: "classs"
                  }  );            
         }
